@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC2D23611409A59D00CCB092 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC2D23601409A59D00CCB092 /* README.txt */; };
 		EC89849B140996F100CB12E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849A140996F100CB12E2 /* UIKit.framework */; };
 		EC89849D140996F100CB12E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849C140996F100CB12E2 /* Foundation.framework */; };
 		EC8984A5140996F100CB12E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC8984A3140996F100CB12E2 /* InfoPlist.strings */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC2D23601409A59D00CCB092 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		EC898496140996F100CB12E2 /* SampleHoverViewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleHoverViewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC89849A140996F100CB12E2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EC89849C140996F100CB12E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -56,6 +58,7 @@
 		EC89848B140996F100CB12E2 = {
 			isa = PBXGroup;
 			children = (
+				EC2D23601409A59D00CCB092 /* README.txt */,
 				EC8984C41409999500CB12E2 /* BDHoverViewController */,
 				EC8984A0140996F100CB12E2 /* SampleHoverViewProject */,
 				EC898499140996F100CB12E2 /* Frameworks */,
@@ -167,6 +170,7 @@
 			files = (
 				EC8984A5140996F100CB12E2 /* InfoPlist.strings in Resources */,
 				EC8984C31409995B00CB12E2 /* MainWindow.xib in Resources */,
+				EC2D23611409A59D00CCB092 /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

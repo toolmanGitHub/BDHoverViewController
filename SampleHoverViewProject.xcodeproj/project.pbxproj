@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		EC89849B140996F100CB12E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849A140996F100CB12E2 /* UIKit.framework */; };
 		EC89849D140996F100CB12E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849C140996F100CB12E2 /* Foundation.framework */; };
-		EC89849F140996F100CB12E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849E140996F100CB12E2 /* CoreGraphics.framework */; };
 		EC8984A5140996F100CB12E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC8984A3140996F100CB12E2 /* InfoPlist.strings */; };
 		EC8984A7140996F100CB12E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984A6140996F100CB12E2 /* main.m */; };
 		EC8984AB140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984AA140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.m */; };
-		EC8984AF140996F100CB12E2 /* SampleHoverViewProjectAppDelegate_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984AE140996F100CB12E2 /* SampleHoverViewProjectAppDelegate_iPhone.m */; };
-		EC8984B2140996F200CB12E2 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8984B0140996F200CB12E2 /* MainWindow_iPhone.xib */; };
-		EC8984B6140996F200CB12E2 /* SampleHoverViewProjectAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984B5140996F200CB12E2 /* SampleHoverViewProjectAppDelegate_iPad.m */; };
-		EC8984B9140996F200CB12E2 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8984B7140996F200CB12E2 /* MainWindow_iPad.xib */; };
+		EC8984C31409995B00CB12E2 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8984C21409995B00CB12E2 /* MainWindow.xib */; };
+		EC8984C9140999B100CB12E2 /* BDHoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984C6140999B100CB12E2 /* BDHoverView.m */; };
+		EC8984CA140999B100CB12E2 /* BDHoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984C8140999B100CB12E2 /* BDHoverViewController.m */; };
+		ECF0E9811409A0FB00CDB86F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849E140996F100CB12E2 /* CoreGraphics.framework */; };
+		ECF0E9831409A26300CDB86F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF0E9821409A26200CDB86F /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,18 +24,18 @@
 		EC89849A140996F100CB12E2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EC89849C140996F100CB12E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC89849E140996F100CB12E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		EC8984A2140996F100CB12E2 /* SampleHoverViewProject-Info.plist */ = {isa = PBXFileReference; path = "SampleHoverViewProject-Info.plist"; sourceTree = "<group>"; };
+		EC8984A2140996F100CB12E2 /* SampleHoverViewProject-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SampleHoverViewProject-Info.plist"; sourceTree = "<group>"; };
 		EC8984A4140996F100CB12E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EC8984A6140996F100CB12E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EC8984A8140996F100CB12E2 /* SampleHoverViewProject-Prefix.pch */ = {isa = PBXFileReference; path = "SampleHoverViewProject-Prefix.pch"; sourceTree = "<group>"; };
-		EC8984A9140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.h */ = {isa = PBXFileReference; path = SampleHoverViewProjectAppDelegate.h; sourceTree = "<group>"; };
+		EC8984A8140996F100CB12E2 /* SampleHoverViewProject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleHoverViewProject-Prefix.pch"; sourceTree = "<group>"; };
+		EC8984A9140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleHoverViewProjectAppDelegate.h; sourceTree = "<group>"; };
 		EC8984AA140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleHoverViewProjectAppDelegate.m; sourceTree = "<group>"; };
-		EC8984AD140996F100CB12E2 /* SampleHoverViewProjectAppDelegate_iPhone.h */ = {isa = PBXFileReference; name = SampleHoverViewProjectAppDelegate_iPhone.h; path = iPhone/SampleHoverViewProjectAppDelegate_iPhone.h; sourceTree = "<group>"; };
-		EC8984AE140996F100CB12E2 /* SampleHoverViewProjectAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SampleHoverViewProjectAppDelegate_iPhone.m; path = iPhone/SampleHoverViewProjectAppDelegate_iPhone.m; sourceTree = "<group>"; };
-		EC8984B1140996F200CB12E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
-		EC8984B4140996F200CB12E2 /* SampleHoverViewProjectAppDelegate_iPad.h */ = {isa = PBXFileReference; name = SampleHoverViewProjectAppDelegate_iPad.h; path = iPad/SampleHoverViewProjectAppDelegate_iPad.h; sourceTree = "<group>"; };
-		EC8984B5140996F200CB12E2 /* SampleHoverViewProjectAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SampleHoverViewProjectAppDelegate_iPad.m; path = iPad/SampleHoverViewProjectAppDelegate_iPad.m; sourceTree = "<group>"; };
-		EC8984B8140996F200CB12E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
+		EC8984C21409995B00CB12E2 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		EC8984C5140999B100CB12E2 /* BDHoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDHoverView.h; sourceTree = "<group>"; };
+		EC8984C6140999B100CB12E2 /* BDHoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDHoverView.m; sourceTree = "<group>"; };
+		EC8984C7140999B100CB12E2 /* BDHoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDHoverViewController.h; sourceTree = "<group>"; };
+		EC8984C8140999B100CB12E2 /* BDHoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDHoverViewController.m; sourceTree = "<group>"; };
+		ECF0E9821409A26200CDB86F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,9 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF0E9831409A26300CDB86F /* QuartzCore.framework in Frameworks */,
 				EC89849B140996F100CB12E2 /* UIKit.framework in Frameworks */,
 				EC89849D140996F100CB12E2 /* Foundation.framework in Frameworks */,
-				EC89849F140996F100CB12E2 /* CoreGraphics.framework in Frameworks */,
+				ECF0E9811409A0FB00CDB86F /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +56,7 @@
 		EC89848B140996F100CB12E2 = {
 			isa = PBXGroup;
 			children = (
+				EC8984C41409999500CB12E2 /* BDHoverViewController */,
 				EC8984A0140996F100CB12E2 /* SampleHoverViewProject */,
 				EC898499140996F100CB12E2 /* Frameworks */,
 				EC898497140996F100CB12E2 /* Products */,
@@ -72,6 +74,7 @@
 		EC898499140996F100CB12E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ECF0E9821409A26200CDB86F /* QuartzCore.framework */,
 				EC89849A140996F100CB12E2 /* UIKit.framework */,
 				EC89849C140996F100CB12E2 /* Foundation.framework */,
 				EC89849E140996F100CB12E2 /* CoreGraphics.framework */,
@@ -82,10 +85,9 @@
 		EC8984A0140996F100CB12E2 /* SampleHoverViewProject */ = {
 			isa = PBXGroup;
 			children = (
+				EC8984C21409995B00CB12E2 /* MainWindow.xib */,
 				EC8984A9140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.h */,
 				EC8984AA140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.m */,
-				EC8984AC140996F100CB12E2 /* iPhone */,
-				EC8984B3140996F200CB12E2 /* iPad */,
 				EC8984A1140996F100CB12E2 /* Supporting Files */,
 			);
 			path = SampleHoverViewProject;
@@ -102,24 +104,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EC8984AC140996F100CB12E2 /* iPhone */ = {
+		EC8984C41409999500CB12E2 /* BDHoverViewController */ = {
 			isa = PBXGroup;
 			children = (
-				EC8984AD140996F100CB12E2 /* SampleHoverViewProjectAppDelegate_iPhone.h */,
-				EC8984AE140996F100CB12E2 /* SampleHoverViewProjectAppDelegate_iPhone.m */,
-				EC8984B0140996F200CB12E2 /* MainWindow_iPhone.xib */,
+				EC8984C5140999B100CB12E2 /* BDHoverView.h */,
+				EC8984C6140999B100CB12E2 /* BDHoverView.m */,
+				EC8984C7140999B100CB12E2 /* BDHoverViewController.h */,
+				EC8984C8140999B100CB12E2 /* BDHoverViewController.m */,
 			);
-			name = iPhone;
-			sourceTree = "<group>";
-		};
-		EC8984B3140996F200CB12E2 /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-				EC8984B4140996F200CB12E2 /* SampleHoverViewProjectAppDelegate_iPad.h */,
-				EC8984B5140996F200CB12E2 /* SampleHoverViewProjectAppDelegate_iPad.m */,
-				EC8984B7140996F200CB12E2 /* MainWindow_iPad.xib */,
-			);
-			name = iPad;
+			name = BDHoverViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +140,9 @@
 /* Begin PBXProject section */
 		EC89848D140996F100CB12E2 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = EC898490140996F100CB12E2 /* Build configuration list for PBXProject "SampleHoverViewProject" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -170,8 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC8984A5140996F100CB12E2 /* InfoPlist.strings in Resources */,
-				EC8984B2140996F200CB12E2 /* MainWindow_iPhone.xib in Resources */,
-				EC8984B9140996F200CB12E2 /* MainWindow_iPad.xib in Resources */,
+				EC8984C31409995B00CB12E2 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,8 +179,8 @@
 			files = (
 				EC8984A7140996F100CB12E2 /* main.m in Sources */,
 				EC8984AB140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.m in Sources */,
-				EC8984AF140996F100CB12E2 /* SampleHoverViewProjectAppDelegate_iPhone.m in Sources */,
-				EC8984B6140996F200CB12E2 /* SampleHoverViewProjectAppDelegate_iPad.m in Sources */,
+				EC8984C9140999B100CB12E2 /* BDHoverView.m in Sources */,
+				EC8984CA140999B100CB12E2 /* BDHoverViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,22 +193,6 @@
 				EC8984A4140996F100CB12E2 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		EC8984B0140996F200CB12E2 /* MainWindow_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC8984B1140996F200CB12E2 /* en */,
-			);
-			name = MainWindow_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		EC8984B7140996F200CB12E2 /* MainWindow_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC8984B8140996F200CB12E2 /* en */,
-			);
-			name = MainWindow_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -267,10 +246,13 @@
 		EC8984BD140996F200CB12E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleHoverViewProject/SampleHoverViewProject-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SampleHoverViewProject/SampleHoverViewProject-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -278,10 +260,13 @@
 		EC8984BE140996F200CB12E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleHoverViewProject/SampleHoverViewProject-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SampleHoverViewProject/SampleHoverViewProject-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -305,6 +290,7 @@
 				EC8984BE140996F200CB12E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

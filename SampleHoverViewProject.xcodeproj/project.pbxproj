@@ -1,0 +1,312 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC89849B140996F100CB12E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849A140996F100CB12E2 /* UIKit.framework */; };
+		EC89849D140996F100CB12E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849C140996F100CB12E2 /* Foundation.framework */; };
+		EC89849F140996F100CB12E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849E140996F100CB12E2 /* CoreGraphics.framework */; };
+		EC8984A5140996F100CB12E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC8984A3140996F100CB12E2 /* InfoPlist.strings */; };
+		EC8984A7140996F100CB12E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984A6140996F100CB12E2 /* main.m */; };
+		EC8984AB140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984AA140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.m */; };
+		EC8984AF140996F100CB12E2 /* SampleHoverViewProjectAppDelegate_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984AE140996F100CB12E2 /* SampleHoverViewProjectAppDelegate_iPhone.m */; };
+		EC8984B2140996F200CB12E2 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8984B0140996F200CB12E2 /* MainWindow_iPhone.xib */; };
+		EC8984B6140996F200CB12E2 /* SampleHoverViewProjectAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984B5140996F200CB12E2 /* SampleHoverViewProjectAppDelegate_iPad.m */; };
+		EC8984B9140996F200CB12E2 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8984B7140996F200CB12E2 /* MainWindow_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EC898496140996F100CB12E2 /* SampleHoverViewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleHoverViewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC89849A140996F100CB12E2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EC89849C140996F100CB12E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EC89849E140996F100CB12E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EC8984A2140996F100CB12E2 /* SampleHoverViewProject-Info.plist */ = {isa = PBXFileReference; path = "SampleHoverViewProject-Info.plist"; sourceTree = "<group>"; };
+		EC8984A4140996F100CB12E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC8984A6140996F100CB12E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC8984A8140996F100CB12E2 /* SampleHoverViewProject-Prefix.pch */ = {isa = PBXFileReference; path = "SampleHoverViewProject-Prefix.pch"; sourceTree = "<group>"; };
+		EC8984A9140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.h */ = {isa = PBXFileReference; path = SampleHoverViewProjectAppDelegate.h; sourceTree = "<group>"; };
+		EC8984AA140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleHoverViewProjectAppDelegate.m; sourceTree = "<group>"; };
+		EC8984AD140996F100CB12E2 /* SampleHoverViewProjectAppDelegate_iPhone.h */ = {isa = PBXFileReference; name = SampleHoverViewProjectAppDelegate_iPhone.h; path = iPhone/SampleHoverViewProjectAppDelegate_iPhone.h; sourceTree = "<group>"; };
+		EC8984AE140996F100CB12E2 /* SampleHoverViewProjectAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SampleHoverViewProjectAppDelegate_iPhone.m; path = iPhone/SampleHoverViewProjectAppDelegate_iPhone.m; sourceTree = "<group>"; };
+		EC8984B1140996F200CB12E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
+		EC8984B4140996F200CB12E2 /* SampleHoverViewProjectAppDelegate_iPad.h */ = {isa = PBXFileReference; name = SampleHoverViewProjectAppDelegate_iPad.h; path = iPad/SampleHoverViewProjectAppDelegate_iPad.h; sourceTree = "<group>"; };
+		EC8984B5140996F200CB12E2 /* SampleHoverViewProjectAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SampleHoverViewProjectAppDelegate_iPad.m; path = iPad/SampleHoverViewProjectAppDelegate_iPad.m; sourceTree = "<group>"; };
+		EC8984B8140996F200CB12E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC898493140996F100CB12E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC89849B140996F100CB12E2 /* UIKit.framework in Frameworks */,
+				EC89849D140996F100CB12E2 /* Foundation.framework in Frameworks */,
+				EC89849F140996F100CB12E2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC89848B140996F100CB12E2 = {
+			isa = PBXGroup;
+			children = (
+				EC8984A0140996F100CB12E2 /* SampleHoverViewProject */,
+				EC898499140996F100CB12E2 /* Frameworks */,
+				EC898497140996F100CB12E2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC898497140996F100CB12E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC898496140996F100CB12E2 /* SampleHoverViewProject.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC898499140996F100CB12E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC89849A140996F100CB12E2 /* UIKit.framework */,
+				EC89849C140996F100CB12E2 /* Foundation.framework */,
+				EC89849E140996F100CB12E2 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC8984A0140996F100CB12E2 /* SampleHoverViewProject */ = {
+			isa = PBXGroup;
+			children = (
+				EC8984A9140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.h */,
+				EC8984AA140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.m */,
+				EC8984AC140996F100CB12E2 /* iPhone */,
+				EC8984B3140996F200CB12E2 /* iPad */,
+				EC8984A1140996F100CB12E2 /* Supporting Files */,
+			);
+			path = SampleHoverViewProject;
+			sourceTree = "<group>";
+		};
+		EC8984A1140996F100CB12E2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC8984A2140996F100CB12E2 /* SampleHoverViewProject-Info.plist */,
+				EC8984A3140996F100CB12E2 /* InfoPlist.strings */,
+				EC8984A6140996F100CB12E2 /* main.m */,
+				EC8984A8140996F100CB12E2 /* SampleHoverViewProject-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC8984AC140996F100CB12E2 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				EC8984AD140996F100CB12E2 /* SampleHoverViewProjectAppDelegate_iPhone.h */,
+				EC8984AE140996F100CB12E2 /* SampleHoverViewProjectAppDelegate_iPhone.m */,
+				EC8984B0140996F200CB12E2 /* MainWindow_iPhone.xib */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		EC8984B3140996F200CB12E2 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				EC8984B4140996F200CB12E2 /* SampleHoverViewProjectAppDelegate_iPad.h */,
+				EC8984B5140996F200CB12E2 /* SampleHoverViewProjectAppDelegate_iPad.m */,
+				EC8984B7140996F200CB12E2 /* MainWindow_iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC898495140996F100CB12E2 /* SampleHoverViewProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC8984BC140996F200CB12E2 /* Build configuration list for PBXNativeTarget "SampleHoverViewProject" */;
+			buildPhases = (
+				EC898492140996F100CB12E2 /* Sources */,
+				EC898493140996F100CB12E2 /* Frameworks */,
+				EC898494140996F100CB12E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SampleHoverViewProject;
+			productName = SampleHoverViewProject;
+			productReference = EC898496140996F100CB12E2 /* SampleHoverViewProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC89848D140996F100CB12E2 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = EC898490140996F100CB12E2 /* Build configuration list for PBXProject "SampleHoverViewProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EC89848B140996F100CB12E2;
+			productRefGroup = EC898497140996F100CB12E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC898495140996F100CB12E2 /* SampleHoverViewProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC898494140996F100CB12E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC8984A5140996F100CB12E2 /* InfoPlist.strings in Resources */,
+				EC8984B2140996F200CB12E2 /* MainWindow_iPhone.xib in Resources */,
+				EC8984B9140996F200CB12E2 /* MainWindow_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC898492140996F100CB12E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC8984A7140996F100CB12E2 /* main.m in Sources */,
+				EC8984AB140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.m in Sources */,
+				EC8984AF140996F100CB12E2 /* SampleHoverViewProjectAppDelegate_iPhone.m in Sources */,
+				EC8984B6140996F200CB12E2 /* SampleHoverViewProjectAppDelegate_iPad.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EC8984A3140996F100CB12E2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC8984A4140996F100CB12E2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EC8984B0140996F200CB12E2 /* MainWindow_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC8984B1140996F200CB12E2 /* en */,
+			);
+			name = MainWindow_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		EC8984B7140996F200CB12E2 /* MainWindow_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC8984B8140996F200CB12E2 /* en */,
+			);
+			name = MainWindow_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC8984BA140996F200CB12E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC8984BB140996F200CB12E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC8984BD140996F200CB12E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SampleHoverViewProject/SampleHoverViewProject-Prefix.pch";
+				INFOPLIST_FILE = "SampleHoverViewProject/SampleHoverViewProject-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EC8984BE140996F200CB12E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SampleHoverViewProject/SampleHoverViewProject-Prefix.pch";
+				INFOPLIST_FILE = "SampleHoverViewProject/SampleHoverViewProject-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC898490140996F100CB12E2 /* Build configuration list for PBXProject "SampleHoverViewProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC8984BA140996F200CB12E2 /* Debug */,
+				EC8984BB140996F200CB12E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC8984BC140996F200CB12E2 /* Build configuration list for PBXNativeTarget "SampleHoverViewProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC8984BD140996F200CB12E2 /* Debug */,
+				EC8984BE140996F200CB12E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC89848D140996F100CB12E2 /* Project object */;
+}

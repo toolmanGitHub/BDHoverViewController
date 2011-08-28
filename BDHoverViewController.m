@@ -252,7 +252,6 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     switch (hoverViewStatusStyle) {
         case BDHoverViewStatusExclusiveTouchStyle:{
             hoverViewWidth=0.0f;
-            hoverViewHeight=0.0f;
             break;
         }
         case BDHoverViewStatusActivityOnlyStyle:

@@ -281,16 +281,6 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     return hoverViewFrame;
 }
 
--(void)adjustHoverView:(BDHoverView **)hoverView forStatusStyle:(BDHoverViewStatusStyle)hoverViewStyle{
-    CGRect newHoverViewFrame=[self hoverViewFrameForStyle:hoverViewStyle];
-    
-    self.hoverView.frame=newHoverViewFrame;
-    UIBezierPath *theShadowPath=[UIBezierPath bezierPathWithRect:self.hoverView.bounds];
-    self.hoverView.layer.shadowPath=theShadowPath.CGPath;
-    
-}
-
-
 #pragma mark -
 #pragma mark Activity Indicator Methods
 

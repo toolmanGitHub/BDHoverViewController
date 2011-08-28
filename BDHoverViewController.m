@@ -100,16 +100,6 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 @synthesize currentStatusString = currentStatusString_;
 @synthesize currentProgress = currentProgress_;
 
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
-}
-*/
 
 - (id)initWithHoverStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle{
     self = [super init];
@@ -584,7 +574,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     
     self.animationOngoing=YES;
     self.hoverView.animationDuration=3*ANIMATION_DURATION/4.0;
-    typedef void (^animationBlock)(void);
+
     
     NSMutableArray *firstStageAnimationBlocks=[NSMutableArray arrayWithCapacity:1];
     NSMutableArray *secondStageAnimationBlocks=[NSMutableArray arrayWithCapacity:1];
@@ -593,21 +583,28 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     animationBlock secondBlock;
     animationBlock completionBlock;
         
-    
+    // Check to see if the hoverView is present
     if (self.hoverViewStatusStyle==BDHoverViewStatusExclusiveTouchStyle && hoverViewStatusStyle!=BDHoverViewStatusExclusiveTouchStyle) {
+        
+        // If the hoverView is not already present (i.e. the Exclusive Touch Style, prepare it
+        // for viewing.
                
+        // First we get the hoverView.  Calling this method returns a hoverView with all the right UI Elements per the requested
+        // style.
+        
         self.hoverView = [self hoverViewForStyle:hoverViewStatusStyle];
-        //     [CATransaction begin];
-        //  [CATransaction setDisableActions:YES];
-            self.hoverView.frame=[self hoverViewFrameForStyle:self.hoverViewStatusStyle];
-        //    [self.hoverView layoutIfNeeded];
-        //      self.hoverView.alpha=0.7;
-        // [CATransaction commit];
+        CGRect newHoverViewFrame=self.hoverView.frame;
+        // Set the frame for the current hoverView Style sto that the animation looks right.
+        
+        self.hoverView.frame=[self hoverViewFrameForStyle:self.hoverViewStatusStyle];
+       
         [self.view addSubview:self.hoverView];
+        
+        // Set the animationDuraction for the hoverView so that the shadow's animation is in sync.
         self.hoverView.animationDuration=ANIMATION_DURATION/4.0;
+        
         firstBlock=[^{
-            //      NSLog(@"First Block:  bringing up hoverView");
-            self.hoverView.frame=[self hoverViewFrameForStyle:hoverViewStatusStyle];
+            self.hoverView.frame=newHoverViewFrame;
         } copy];
         
         [firstStageAnimationBlocks addObject: firstBlock];
@@ -615,7 +612,6 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         [firstBlock release];
         
         secondBlock=[^{
-            //      NSLog(@"    Second Block:  Setting Alpha for UI subviews");
             self.activityIndicator.alpha=1.0f;
             self.statusLabel.alpha=1.0f;
             self.progressView.alpha=1.0f;
@@ -626,9 +622,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         
     }else{
         if (hoverViewStatusStyle==BDHoverViewStatusExclusiveTouchStyle) {
-            //      NSLog(@"tearing it down");
             firstBlock=[^{
-                //          NSLog(@"First Block: tear down hoverView");
                 self.hoverView.alpha=0.0f;
             } copy];
             
@@ -639,7 +633,6 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
             //  self.hoverView.layer.opacity=0.0;
            
             completionBlock=[^{
-                //      NSLog(@"                Completion block:  tearDown tear down hoverView");
                 [self.hoverView removeFromSuperview];
                 self.hoverView=nil;
                 self.activityIndicator=nil;
@@ -656,7 +649,6 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
             ProgressViewAnimationBlocksForStyle(self, hoverViewStatusStyle, &firstStageAnimationBlocks, &secondStageAnimationBlocks, &completionBlocks);
                         
             secondBlock=[^{
-                //            NSLog(@"        Second Block:  HoverView and Activity Frame");
                 self.hoverView.frame=[self hoverViewFrameForStyle:hoverViewStatusStyle];
                 self.activityIndicator.frame=[self activityIndicatorFrameForStyle:hoverViewStatusStyle];
             } copy];
@@ -664,7 +656,6 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
             [secondBlock release];
         }
         
-        //   
     }
     
     [UIView animateWithDuration:ANIMATION_DURATION/4.0
@@ -728,12 +719,6 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-	self.hoverView=nil;
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-    self.activityIndicator=nil;
-    self.statusLabel=nil;
-    self.progressView=nil;
 }
 
 #pragma mark -

@@ -5,6 +5,8 @@ This sample demonstrates the use of the BDHoverViewController.  BDHoverViewContr
 3.  An exclusive tough UIView with a UIActivityIndicator and UILabel for status.
 4.  An exclusive touch UIView with a UIActivityIndicator, UILabel for status, and a UIProgressView
 
+BDHoverViewController makes extensive use of blocks in order to build the appropriate animations for when a style of hoverView changes from one to the other.
+
 License
 
 The below license is the new BSD license with the OSI recommended personalizations.

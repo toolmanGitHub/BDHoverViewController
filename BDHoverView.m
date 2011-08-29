@@ -81,17 +81,25 @@
 }
 
 -(void)setFrame:(CGRect)frame{
+    
+    // Copied and adapted from Omnigroup's UIView Shadow performance demonstration.  Class can be found here.
+    // https://github.com/omnigroup/OmniGroup/blob/master/Frameworks/OmniUI/iPad/Examples/DropShadowOptions/Classes/LayerShadowPathDemo.m
+    
     CGRect oldBounds = self.bounds;
+    
     [super setFrame:frame];
     
+    // Create the new Shadow Path for the animation
     CGMutablePathRef newShadowPath = CGPathCreateMutable();
     CGPathAddRect(newShadowPath, NULL/*transform*/, self.bounds);
 
 
     CABasicAnimation *shadowAnimation = [CABasicAnimation animationWithKeyPath:@"shadowPath"];
     
+    // Create the shadow path for the old bounds and assign it to the fromValue of the CABasicAnimation object.
     CGMutablePathRef oldShadowPath = CGPathCreateMutable();
     CGPathAddRect(oldShadowPath, NULL/*transform*/, oldBounds);
+    
     shadowAnimation.fromValue = (id)oldShadowPath;
     CFRelease(oldShadowPath);
     

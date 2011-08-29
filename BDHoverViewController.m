@@ -461,20 +461,21 @@ void StatusLabelAnimationBlocksForStyle(BDHoverViewController *self, BDHoverView
     animationBlock firstBlock=nil;
     animationBlock secondBlock=nil;
     animationBlock completionBlock=nil;
+    __block BDHoverViewController *blockSelf=self;
     // Remove Status Label
     
     if ((hoverViewStatusStyle!=BDHoverViewStatusActivityAndStatusStyle && hoverViewStatusStyle!=BDHoverViewStatusActivityProgressStyle) && (self.statusLabel!=nil)) {
         firstBlock=[^{
             //              NSLog(@"First Block:  Status Label Alpha 0.0");
-            self.statusLabel.alpha=0.0f;
+            blockSelf.statusLabel.alpha=0.0f;
         } copy];
         [*firstBlocks addObject: firstBlock];
         [firstBlock release];
         
         completionBlock=[^{
             //             NSLog(@"            Completion Block:  Remove Status Label");
-            [self.statusLabel removeFromSuperview];
-            self.statusLabel=nil;
+            [blockSelf.statusLabel removeFromSuperview];
+            blockSelf.statusLabel=nil;
         } copy];
         [*completionBlocks addObject: completionBlock];
         [completionBlock release];
@@ -492,15 +493,15 @@ void StatusLabelAnimationBlocksForStyle(BDHoverViewController *self, BDHoverView
         }
         secondBlock=[^{
             //        NSLog(@"        Second Block:  Status Label Alpha and Frame");
-            self.statusLabel.alpha=1.0;
-            self.statusLabel.frame=[self statusLabelFrameForStyle:hoverViewStatusStyle];
+            blockSelf.statusLabel.alpha=1.0;
+            blockSelf.statusLabel.frame=[self statusLabelFrameForStyle:hoverViewStatusStyle];
         } copy];
         [*secondBlocks addObject: secondBlock];
         [secondBlock release];
         
         completionBlock=[^{
             //           NSLog(@"            Completion Block:  Status Label Reapply Alpha");
-            self.statusLabel.alpha=1.0;
+            blockSelf.statusLabel.alpha=1.0;
         } copy];
         [*completionBlocks addObject: completionBlock];
         [completionBlock release];
@@ -515,21 +516,22 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     animationBlock firstBlock=nil;
     animationBlock secondBlock=nil;
     animationBlock completionBlock=nil;
+    __block BDHoverViewController *blockSelf=self;
 
     // Progress View
     if (hoverViewStatusStyle!=BDHoverViewStatusActivityProgressStyle && (self.progressView!=nil)) {
         
         firstBlock=[^{
             //              NSLog(@"First Block:  Progress Alpha to 0.0");
-            self.progressView.alpha=0.0f;
+            blockSelf.progressView.alpha=0.0f;
         } copy];
         [*firstBlocks addObject: firstBlock];
         [firstBlock release];
         
         completionBlock=[^{
             //                NSLog(@"            Completion Block:  Removing Progress View");
-            [self.progressView removeFromSuperview];
-            self.progressView=nil;
+            [blockSelf.progressView removeFromSuperview];
+            blockSelf.progressView=nil;
         } copy];
         [*completionBlocks addObject: completionBlock];
         [completionBlock release];
@@ -546,8 +548,8 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         CGRect newProgressFrame=[self progressViewFrameForStyle:hoverViewStatusStyle];
         secondBlock=[^{
             //                  NSLog(@"    Second Block:  Progress Alpha and Frame");
-            self.progressView.alpha=1.0f;
-            self.progressView.frame=newProgressFrame;
+            blockSelf.progressView.alpha=1.0f;
+            blockSelf.progressView.frame=newProgressFrame;
         } copy];
         [*secondBlocks addObject: secondBlock];
         [secondBlock release];
@@ -582,6 +584,8 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     animationBlock firstBlock;
     animationBlock secondBlock;
     animationBlock completionBlock;
+    
+    __block BDHoverViewController *blockSelf=self;
         
     // Check to see if the hoverView is present
     if (self.hoverViewStatusStyle==BDHoverViewStatusExclusiveTouchStyle && hoverViewStatusStyle!=BDHoverViewStatusExclusiveTouchStyle) {
@@ -604,7 +608,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         self.hoverView.animationDuration=ANIMATION_DURATION/4.0;
         
         firstBlock=[^{
-            self.hoverView.frame=newHoverViewFrame;
+            blockSelf.hoverView.frame=newHoverViewFrame;
         } copy];
         
         [firstStageAnimationBlocks addObject: firstBlock];
@@ -612,9 +616,9 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         [firstBlock release];
         
         secondBlock=[^{
-            self.activityIndicator.alpha=1.0f;
-            self.statusLabel.alpha=1.0f;
-            self.progressView.alpha=1.0f;
+            blockSelf.activityIndicator.alpha=1.0f;
+            blockSelf.statusLabel.alpha=1.0f;
+            blockSelf.progressView.alpha=1.0f;
         } copy];
         [secondStageAnimationBlocks addObject: secondBlock];
         [secondBlock release];
@@ -623,7 +627,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     }else{
         if (hoverViewStatusStyle==BDHoverViewStatusExclusiveTouchStyle) {
             firstBlock=[^{
-                self.hoverView.alpha=0.0f;
+                blockSelf.hoverView.alpha=0.0f;
             } copy];
             
             [firstStageAnimationBlocks addObject: firstBlock];
@@ -633,11 +637,11 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
             //  self.hoverView.layer.opacity=0.0;
            
             completionBlock=[^{
-                [self.hoverView removeFromSuperview];
-                self.hoverView=nil;
-                self.activityIndicator=nil;
-                self.statusLabel=nil;
-                self.progressView=nil;
+                [blockSelf.hoverView removeFromSuperview];
+                blockSelf.hoverView=nil;
+                blockSelf.activityIndicator=nil;
+                blockSelf.statusLabel=nil;
+                blockSelf.progressView=nil;
             } copy];
             
             [completionBlocks addObject:completionBlock];
@@ -649,8 +653,8 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
             ProgressViewAnimationBlocksForStyle(self, hoverViewStatusStyle, &firstStageAnimationBlocks, &secondStageAnimationBlocks, &completionBlocks);
                         
             secondBlock=[^{
-                self.hoverView.frame=[self hoverViewFrameForStyle:hoverViewStatusStyle];
-                self.activityIndicator.frame=[self activityIndicatorFrameForStyle:hoverViewStatusStyle];
+                blockSelf.hoverView.frame=[self hoverViewFrameForStyle:hoverViewStatusStyle];
+                blockSelf.activityIndicator.frame=[self activityIndicatorFrameForStyle:hoverViewStatusStyle];
             } copy];
             [secondStageAnimationBlocks addObject: secondBlock];
             [secondBlock release];
@@ -682,6 +686,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
                                                   if (completion!=nil) {
                                                       completion(finished);
                                                   }
+                                                
                                               }];  // completion:^(BOOL finished)
                                               
                                           } // completion:^(BOOL finished)

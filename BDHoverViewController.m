@@ -667,16 +667,17 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
                          [firstStageAnimationBlocks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                              animationBlock firstBlock=obj;
                              firstBlock();
-                         }];
-                     }
+                         }]; //[firstStageAnimationBlocks enumerateObjectsUsingBlock:
+                     } //animations:^{
                      completion:^(BOOL finished) {
                          [UIView animateWithDuration:3.0*ANIMATION_DURATION/4.0
                                           animations:^{
                                               [secondStageAnimationBlocks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                                                   animationBlock secondBlock=obj;
                                                   secondBlock();
-                                              }];
-                                          }
+                                              }]; //[secondStageAnimationBlocks enumerateObjectsUsingBlock
+                                          } //animations:^{
+                          
                                           completion:^(BOOL finished) {
                                               self.hoverViewStatusStyle=hoverViewStatusStyle;
                                               self.animationOngoing=NO;
@@ -686,13 +687,13 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
                                                   if (completion!=nil) {
                                                       completion(finished);
                                                   }
-                                                
-                                              }];  // completion:^(BOOL finished)
-                                              
+                                              }];  // [completionBlocks enumerateObjectsUsingBlock:
                                           } // completion:^(BOOL finished)
+                          
                           ]; //[UIView animateWithDuration:3.0*ANIMATION_DURATION/4.0
                      }  //completion:^(BOOL finished)
-     ];
+     
+     ]; // [UIView animateWithDuration:ANIMATION_DURATION/4.0
                         
 }
 

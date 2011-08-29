@@ -82,7 +82,7 @@
 
 -(void)setFrame:(CGRect)frame{
     
-    // Copied and adapted from Omnigroup's UIView Shadow performance demonstration.  Class can be found here.
+    // Adapted from Omnigroup's UIView Shadow performance demonstration.  Class can be found here.
     // https://github.com/omnigroup/OmniGroup/blob/master/Frameworks/OmniUI/iPad/Examples/DropShadowOptions/Classes/LayerShadowPathDemo.m
     
     CGRect oldBounds = self.bounds;

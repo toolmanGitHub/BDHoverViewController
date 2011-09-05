@@ -234,10 +234,10 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 
 -(CGRect)hoverViewFrameForStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle{
     CGRect hoverViewFrame=CGRectZero;
-    CGFloat hoverViewWidth=290.0;
-    CGFloat hoverViewHeight=0.0;
-    CGFloat hoverViewX=0.0;
-    CGFloat hoverViewY=0.0;
+    CGFloat hoverViewWidth=290.0f;
+    CGFloat hoverViewHeight=0.0f;
+    CGFloat hoverViewX=0.0f;
+    CGFloat hoverViewY=0.0f;
    
     switch (hoverViewStatusStyle) {
         case BDHoverViewStatusExclusiveTouchStyle:{
@@ -246,18 +246,18 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         }
         case BDHoverViewStatusActivityOnlyStyle:
         {
-            hoverViewHeight = 77.0;
-            hoverViewWidth = 77.0;
+            hoverViewHeight = 77.0f;
+            hoverViewWidth = 77.0f;
             break;
         }
         case BDHoverViewStatusActivityAndStatusStyle:
         {
-            hoverViewHeight = 101.0;
+            hoverViewHeight = 101.0f;
             break;
         }
         case BDHoverViewStatusActivityProgressStyle:
         {
-            hoverViewHeight = 180.0;
+            hoverViewHeight = 180.0f;
             break;
         }   
     }
@@ -276,7 +276,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 -(UIActivityIndicatorView *)activityIndicatorForStyle:(BDHoverViewStatusStyle)hoverViewStyle{
     UIActivityIndicatorView *aActivityIndicator=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     [aActivityIndicator startAnimating];
-      aActivityIndicator.alpha=0.0;
+      aActivityIndicator.alpha=0.0f;
     aActivityIndicator.opaque=YES;
     aActivityIndicator.frame=[self activityIndicatorFrameForStyle:hoverViewStyle];
     return [aActivityIndicator autorelease];
@@ -288,19 +288,19 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     switch (hoverViewStatusStyle) {
         case BDHoverViewStatusExclusiveTouchStyle:
         {
-            activityIndicatorFrame=CGRectMake(0.0, 0.0, 37.0,37.0);
+            activityIndicatorFrame=CGRectMake(0.0f, 0.0f, 37.0f,37.0f);
             break;
         }
         case BDHoverViewStatusActivityOnlyStyle:
         {
             // Adjust the frame location of the activityIndicator Frame
-            activityIndicatorFrame=CGRectMake(20.0, 20.0, 37.0,37.0);
+            activityIndicatorFrame=CGRectMake(20.0f, 20.0f, 37.0f,37.0f);
             break;
         }
         case BDHoverViewStatusActivityAndStatusStyle:
         {
             // Adjust the frame location of the activityIndicator Frame
-            activityIndicatorFrame=CGRectMake(128.0, 15.0, 37.0,37.0);
+            activityIndicatorFrame=CGRectMake(128.0f, 15.0f, 37.0f,37.0f);
             
             break;
         }
@@ -331,14 +331,14 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 
 -(UILabel *)statusLabelForStyle:(BDHoverViewStatusStyle)hoverViewStyle{
     
-    UILabel *aStatusLabel=[[UILabel alloc] initWithFrame:CGRectMake(21, 70, 248.0, 21)];
+    UILabel *aStatusLabel=[[UILabel alloc] initWithFrame:CGRectMake(21.0f, 70.0f, 248.0f, 21.0f)];
     
     aStatusLabel.frame = [self statusLabelFrameForStyle: hoverViewStyle];
     
     aStatusLabel.backgroundColor=[UIColor clearColor];
     aStatusLabel.textColor=[UIColor whiteColor];
     aStatusLabel.textAlignment = UITextAlignmentCenter;
-    aStatusLabel.alpha=0.0;
+    aStatusLabel.alpha=0.0f;
     aStatusLabel.opaque=YES;
     if (currentStatusString_!=nil) {
         aStatusLabel.text=self.currentStatusString;
@@ -356,17 +356,17 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     switch (hoverViewStyle) {
         case BDHoverViewStatusActivityOnlyStyle:
         {
-            statusLabelFrame=CGRectMake(10, 0.0, 248, 21);
+            statusLabelFrame=CGRectMake(10.0f, 0.0f, 248.0f, 21.0f);
             break;
         }
         case BDHoverViewStatusActivityAndStatusStyle:
         {
-           statusLabelFrame=CGRectMake(21, 60, 248, 21);
+           statusLabelFrame=CGRectMake(21.0f, 60.0f, 248.0f, 21.0f);
             break;
         }
         case BDHoverViewStatusActivityProgressStyle:
         {
-            statusLabelFrame=CGRectMake(21, 111, 248, 21);
+            statusLabelFrame=CGRectMake(21.0f, 111.0f, 248.0f, 21.0f);
             break;
         }
             
@@ -397,26 +397,25 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     switch (hoverViewStatusStyle) {
         case BDHoverViewStatusActivityOnlyStyle:
         {
-            progressViewFrame=CGRectMake(22.0,77.0,5.0f,9.0);
+            progressViewFrame=CGRectMake(22.0f,77.0f,5.0f,9.0f);
             break;
             
         }
         case BDHoverViewStatusActivityAndStatusStyle:
         {
-            progressViewFrame=CGRectMake(22.0,77.0,248.0,9.0);
+            progressViewFrame=CGRectMake(22.0f,77.0f,248.0f,9.0f);
             break;
             
         }
         case BDHoverViewStatusActivityProgressStyle:
         {
-            progressViewFrame=CGRectMake(22, 94.0, 248.0, 9.0);
+            progressViewFrame=CGRectMake(22.0f, 94.0f, 248.0f, 9.0f);
             break;
         }
     }
     
     return progressViewFrame;
 }
-
 
 
 #pragma mark -
@@ -493,7 +492,7 @@ void StatusLabelAnimationBlocksForStyle(BDHoverViewController *self, BDHoverView
         }
         secondBlock=[^{
             //        NSLog(@"        Second Block:  Status Label Alpha and Frame");
-            blockSelf.statusLabel.alpha=1.0;
+            blockSelf.statusLabel.alpha=1.0f;
             blockSelf.statusLabel.frame=[self statusLabelFrameForStyle:hoverViewStatusStyle];
         } copy];
         [*secondBlocks addObject: secondBlock];
@@ -501,7 +500,7 @@ void StatusLabelAnimationBlocksForStyle(BDHoverViewController *self, BDHoverView
         
         completionBlock=[^{
             //           NSLog(@"            Completion Block:  Status Label Reapply Alpha");
-            blockSelf.statusLabel.alpha=1.0;
+            blockSelf.statusLabel.alpha=1.0f;
         } copy];
         [*completionBlocks addObject: completionBlock];
         [completionBlock release];
@@ -541,11 +540,10 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         if (self.progressView==nil) {
             self.progressView=[self progressViewForStyle:self.hoverViewStatusStyle];
         }
-        //           NSLog(@"    ProgressView:  %@",self.progressView);
         if (self.progressView.superview==nil){
             [self.hoverView addSubview:self.progressView];
         }
-        CGRect newProgressFrame=[self progressViewFrameForStyle:hoverViewStatusStyle];
+          CGRect newProgressFrame=[self progressViewFrameForStyle:hoverViewStatusStyle];
         secondBlock=[^{
             //                  NSLog(@"    Second Block:  Progress Alpha and Frame");
             blockSelf.progressView.alpha=1.0f;
@@ -555,7 +553,6 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         [secondBlock release];
         
         completionBlock=[^{
-            //          NSLog(@"            Completion Block:  Setting Progress Alpha again");
             
         } copy];
         [*completionBlocks addObject: completionBlock];
@@ -575,7 +572,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
        NSLog(@"hoverViewStatusStyle animation start");
     
     self.animationOngoing=YES;
-    self.hoverView.animationDuration=3*ANIMATION_DURATION/4.0;
+    self.hoverView.animationDuration=3*ANIMATION_DURATION/4.0f;
 
     
     NSMutableArray *firstStageAnimationBlocks=[NSMutableArray arrayWithCapacity:1];
@@ -598,14 +595,14 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         
         self.hoverView = [self hoverViewForStyle:hoverViewStatusStyle];
         CGRect newHoverViewFrame=self.hoverView.frame;
-        // Set the frame for the current hoverView Style sto that the animation looks right.
+        
+        // Set the frame for the current hoverView Style sto that the animation looks right.  This also ensures that the shadow of the hoverView looks right.
         
         self.hoverView.frame=[self hoverViewFrameForStyle:self.hoverViewStatusStyle];
-       
-        [self.view addSubview:self.hoverView];
+       [self.view addSubview:self.hoverView];
         
-        // Set the animationDuraction for the hoverView so that the shadow's animation is in sync.
-        self.hoverView.animationDuration=ANIMATION_DURATION/4.0;
+        // Set the animationDuration for the hoverView so that the shadow's animation is in sync.
+        self.hoverView.animationDuration=ANIMATION_DURATION/4.0f;
         
         firstBlock=[^{
             blockSelf.hoverView.frame=newHoverViewFrame;
@@ -662,7 +659,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         
     }
     
-    [UIView animateWithDuration:ANIMATION_DURATION/4.0
+    [UIView animateWithDuration:ANIMATION_DURATION/4.0f
                      animations:^{
                          [firstStageAnimationBlocks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                              animationBlock firstBlock=obj;
@@ -670,7 +667,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
                          }]; //[firstStageAnimationBlocks enumerateObjectsUsingBlock:
                      } //animations:^{
                      completion:^(BOOL finished) {
-                         [UIView animateWithDuration:3.0*ANIMATION_DURATION/4.0
+                         [UIView animateWithDuration:3.0*ANIMATION_DURATION/4.0f
                                           animations:^{
                                               [secondStageAnimationBlocks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                                                   animationBlock secondBlock=obj;

@@ -14,11 +14,29 @@
 		EC8984A7140996F100CB12E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984A6140996F100CB12E2 /* main.m */; };
 		EC8984AB140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984AA140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.m */; };
 		EC8984C31409995B00CB12E2 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8984C21409995B00CB12E2 /* MainWindow.xib */; };
-		EC8984C9140999B100CB12E2 /* BDHoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984C6140999B100CB12E2 /* BDHoverView.m */; };
-		EC8984CA140999B100CB12E2 /* BDHoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984C8140999B100CB12E2 /* BDHoverViewController.m */; };
+		EC8EA0DA141AFC2900EB14AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849C140996F100CB12E2 /* Foundation.framework */; };
+		EC8EA0E0141AFC2900EB14AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC8EA0DE141AFC2900EB14AF /* InfoPlist.strings */; };
+		EC8EA0E6141AFC8F00EB14AF /* BDHoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984C6140999B100CB12E2 /* BDHoverView.m */; };
+		EC8EA0E7141AFC9200EB14AF /* BDHoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8984C8140999B100CB12E2 /* BDHoverViewController.m */; };
+		EC8EA0E8141AFC9900EB14AF /* BDHoverView.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8984C5140999B100CB12E2 /* BDHoverView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC8EA0E9141AFC9B00EB14AF /* BDHoverViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8984C7140999B100CB12E2 /* BDHoverViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC8EA0EA141AFCAE00EB14AF /* BDHoverViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EA0D9141AFC2900EB14AF /* BDHoverViewController.framework */; };
+		EC8EA0ED141AFCD500EB14AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849E140996F100CB12E2 /* CoreGraphics.framework */; };
+		EC8EA0EE141AFCD500EB14AF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF0E9821409A26200CDB86F /* QuartzCore.framework */; };
+		EC8EA0EF141AFCD500EB14AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849A140996F100CB12E2 /* UIKit.framework */; };
 		ECF0E9811409A0FB00CDB86F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849E140996F100CB12E2 /* CoreGraphics.framework */; };
 		ECF0E9831409A26300CDB86F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF0E9821409A26200CDB86F /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC8EA0EB141AFCB800EB14AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC89848D140996F100CB12E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC8EA0D8141AFC2900EB14AF;
+			remoteInfo = BDHoverViewController;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		EC2D23601409A59D00CCB092 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -37,6 +55,10 @@
 		EC8984C6140999B100CB12E2 /* BDHoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDHoverView.m; sourceTree = "<group>"; };
 		EC8984C7140999B100CB12E2 /* BDHoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDHoverViewController.h; sourceTree = "<group>"; };
 		EC8984C8140999B100CB12E2 /* BDHoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDHoverViewController.m; sourceTree = "<group>"; };
+		EC8EA0D9141AFC2900EB14AF /* BDHoverViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = BDHoverViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC8EA0DD141AFC2900EB14AF /* BDHoverViewController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BDHoverViewController-Info.plist"; sourceTree = "<group>"; };
+		EC8EA0DF141AFC2900EB14AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC8EA0E1141AFC2900EB14AF /* BDHoverViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BDHoverViewController-Prefix.pch"; sourceTree = "<group>"; };
 		ECF0E9821409A26200CDB86F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -45,10 +67,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC8EA0EA141AFCAE00EB14AF /* BDHoverViewController.framework in Frameworks */,
 				ECF0E9831409A26300CDB86F /* QuartzCore.framework in Frameworks */,
 				EC89849B140996F100CB12E2 /* UIKit.framework in Frameworks */,
 				EC89849D140996F100CB12E2 /* Foundation.framework in Frameworks */,
 				ECF0E9811409A0FB00CDB86F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC8EA0D4141AFC2900EB14AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC8EA0ED141AFCD500EB14AF /* CoreGraphics.framework in Frameworks */,
+				EC8EA0EE141AFCD500EB14AF /* QuartzCore.framework in Frameworks */,
+				EC8EA0EF141AFCD500EB14AF /* UIKit.framework in Frameworks */,
+				EC8EA0DA141AFC2900EB14AF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +95,7 @@
 				EC2D23601409A59D00CCB092 /* README.txt */,
 				EC8984C41409999500CB12E2 /* BDHoverViewController */,
 				EC8984A0140996F100CB12E2 /* SampleHoverViewProject */,
+				EC8EA0DB141AFC2900EB14AF /* BDHoverViewController */,
 				EC898499140996F100CB12E2 /* Frameworks */,
 				EC898497140996F100CB12E2 /* Products */,
 			);
@@ -70,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				EC898496140996F100CB12E2 /* SampleHoverViewProject.app */,
+				EC8EA0D9141AFC2900EB14AF /* BDHoverViewController.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +146,7 @@
 		EC8984C41409999500CB12E2 /* BDHoverViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EC8EA0DC141AFC2900EB14AF /* Supporting Files */,
 				EC8984C5140999B100CB12E2 /* BDHoverView.h */,
 				EC8984C6140999B100CB12E2 /* BDHoverView.m */,
 				EC8984C7140999B100CB12E2 /* BDHoverViewController.h */,
@@ -118,7 +155,37 @@
 			name = BDHoverViewController;
 			sourceTree = "<group>";
 		};
+		EC8EA0DB141AFC2900EB14AF /* BDHoverViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BDHoverViewController;
+			sourceTree = "<group>";
+		};
+		EC8EA0DC141AFC2900EB14AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC8EA0DD141AFC2900EB14AF /* BDHoverViewController-Info.plist */,
+				EC8EA0DE141AFC2900EB14AF /* InfoPlist.strings */,
+				EC8EA0E1141AFC2900EB14AF /* BDHoverViewController-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = BDHoverViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EC8EA0D5141AFC2900EB14AF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC8EA0E8141AFC9900EB14AF /* BDHoverView.h in Headers */,
+				EC8EA0E9141AFC9B00EB14AF /* BDHoverViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		EC898495140996F100CB12E2 /* SampleHoverViewProject */ = {
@@ -132,11 +199,32 @@
 			buildRules = (
 			);
 			dependencies = (
+				EC8EA0EC141AFCB800EB14AF /* PBXTargetDependency */,
 			);
 			name = SampleHoverViewProject;
 			productName = SampleHoverViewProject;
 			productReference = EC898496140996F100CB12E2 /* SampleHoverViewProject.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EC8EA0D8141AFC2900EB14AF /* BDHoverViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC8EA0E4141AFC2900EB14AF /* Build configuration list for PBXNativeTarget "BDHoverViewController" */;
+			buildPhases = (
+				EC8EA0D2141AFC2900EB14AF /* ShellScript */,
+				EC8EA0D3141AFC2900EB14AF /* Sources */,
+				EC8EA0D4141AFC2900EB14AF /* Frameworks */,
+				EC8EA0D5141AFC2900EB14AF /* Headers */,
+				EC8EA0D6141AFC2900EB14AF /* Resources */,
+				EC8EA0D7141AFC2900EB14AF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BDHoverViewController;
+			productName = BDHoverViewController;
+			productReference = EC8EA0D9141AFC2900EB14AF /* BDHoverViewController.framework */;
+			productType = "com.apple.product-type.framework.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -159,6 +247,7 @@
 			projectRoot = "";
 			targets = (
 				EC898495140996F100CB12E2 /* SampleHoverViewProject */,
+				EC8EA0D8141AFC2900EB14AF /* BDHoverViewController */,
 			);
 		};
 /* End PBXProject section */
@@ -174,7 +263,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC8EA0D6141AFC2900EB14AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC8EA0E0141AFC2900EB14AF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EC8EA0D2141AFC2900EB14AF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n\tUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n\techo \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\n\techo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\n\txcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\n";
+		};
+		EC8EA0D7141AFC2900EB14AF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n        eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n    echo \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\n    exit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n    UFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Make sure the other platform gets built\n\necho \"Build other platform\"\n\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n\n\n# Build the fat static library binary\n\necho \"Create universal static library\"\n\necho \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\necho mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nmv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\n    if [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\n    then\n        echo ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n        ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n    fi\ndone\n\n\n# Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n\necho \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n\necho rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\necho cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EC898492140996F100CB12E2 /* Sources */ = {
@@ -183,18 +309,41 @@
 			files = (
 				EC8984A7140996F100CB12E2 /* main.m in Sources */,
 				EC8984AB140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.m in Sources */,
-				EC8984C9140999B100CB12E2 /* BDHoverView.m in Sources */,
-				EC8984CA140999B100CB12E2 /* BDHoverViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC8EA0D3141AFC2900EB14AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC8EA0E7141AFC9200EB14AF /* BDHoverViewController.m in Sources */,
+				EC8EA0E6141AFC8F00EB14AF /* BDHoverView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC8EA0EC141AFCB800EB14AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC8EA0D8141AFC2900EB14AF /* BDHoverViewController */;
+			targetProxy = EC8EA0EB141AFCB800EB14AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EC8984A3140996F100CB12E2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EC8984A4140996F100CB12E2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EC8EA0DE141AFC2900EB14AF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC8EA0DF141AFC2900EB14AF /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -275,6 +424,40 @@
 			};
 			name = Release;
 		};
+		EC8EA0E2141AFC2900EB14AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BDHoverViewController/BDHoverViewController-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "BDHoverViewController/BDHoverViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		EC8EA0E3141AFC2900EB14AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BDHoverViewController/BDHoverViewController-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "BDHoverViewController/BDHoverViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -295,6 +478,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EC8EA0E4141AFC2900EB14AF /* Build configuration list for PBXNativeTarget "BDHoverViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC8EA0E2141AFC2900EB14AF /* Debug */,
+				EC8EA0E3141AFC2900EB14AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

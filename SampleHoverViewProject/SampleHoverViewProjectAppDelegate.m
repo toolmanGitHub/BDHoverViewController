@@ -40,7 +40,7 @@
 */
 
 #import "SampleHoverViewProjectAppDelegate.h"
-#import "BDHoverViewController.h"
+#import <BDHoverViewController/BDHoverViewController.h>
 @implementation SampleHoverViewProjectAppDelegate
 
 @synthesize window = _window;

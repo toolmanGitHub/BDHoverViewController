@@ -40,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		EC2D23601409A59D00CCB092 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		EC55F54C141D056E00E756C5 /* BDStatusUpdateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDStatusUpdateProtocol.h; sourceTree = "<group>"; };
 		EC898496140996F100CB12E2 /* SampleHoverViewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleHoverViewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC89849A140996F100CB12E2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EC89849C140996F100CB12E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -95,7 +96,6 @@
 				EC2D23601409A59D00CCB092 /* README.txt */,
 				EC8984C41409999500CB12E2 /* BDHoverViewController */,
 				EC8984A0140996F100CB12E2 /* SampleHoverViewProject */,
-				EC8EA0DB141AFC2900EB14AF /* BDHoverViewController */,
 				EC898499140996F100CB12E2 /* Frameworks */,
 				EC898497140996F100CB12E2 /* Products */,
 			);
@@ -151,15 +151,9 @@
 				EC8984C6140999B100CB12E2 /* BDHoverView.m */,
 				EC8984C7140999B100CB12E2 /* BDHoverViewController.h */,
 				EC8984C8140999B100CB12E2 /* BDHoverViewController.m */,
+				EC55F54C141D056E00E756C5 /* BDStatusUpdateProtocol.h */,
 			);
 			name = BDHoverViewController;
-			sourceTree = "<group>";
-		};
-		EC8EA0DB141AFC2900EB14AF /* BDHoverViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BDHoverViewController;
 			sourceTree = "<group>";
 		};
 		EC8EA0DC141AFC2900EB14AF /* Supporting Files */ = {
@@ -400,6 +394,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../AppStoreSkeleton\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleHoverViewProject/SampleHoverViewProject-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -414,6 +413,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../AppStoreSkeleton\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleHoverViewProject/SampleHoverViewProject-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -486,6 +490,7 @@
 				EC8EA0E3141AFC2900EB14AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

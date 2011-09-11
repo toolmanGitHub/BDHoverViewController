@@ -115,6 +115,11 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     return self;
 }
 
+-(void)updateHoverViewStatus:(NSString *)status progressValue:(float)progress{
+    [self updateHoverViewStatus:status];
+    [self updateHoverViewProgressWithProgressValue:progress];
+}
+
 -(void)updateHoverViewProgressWithProgressValue:(float)progress{
     self.progressView.progress=progress;
     self.currentProgress = progress;

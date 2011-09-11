@@ -62,5 +62,6 @@ typedef NSInteger BDHoverViewStatusStyle;
 -(void)updateHoverViewProgressWithProgressValue:(float)progress;
 -(void)updateHoverViewStatus:(NSString *)status;
 -(void)hoverViewStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle animated:(BOOL)animated completion:(void (^)(BOOL finished))completion;
+-(void)updateHoverViewStatus:(NSString *)status progressValue:(float)progress;
 
 @end

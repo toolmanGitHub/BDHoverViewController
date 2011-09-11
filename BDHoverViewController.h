@@ -40,17 +40,11 @@
  */
 
 #import <UIKit/UIKit.h>
-enum  {
-    BDHoverViewStatusNothingStyle=-1,
-    BDHoverViewStatusExclusiveTouchStyle=100,
-	BDHoverViewStatusActivityOnlyStyle,
-    BDHoverViewStatusActivityAndStatusStyle,
-	BDHoverViewStatusActivityProgressStyle,
-};
-typedef NSInteger BDHoverViewStatusStyle;
+#import "BDStatusUpdateProtocol.h"
+
 
 @class BDHoverView;
-@interface BDHoverViewController : UIViewController {
+@interface BDHoverViewController : UIViewController <BDStatusUpdateProtocol>{
 	
     
 }
@@ -58,10 +52,5 @@ typedef NSInteger BDHoverViewStatusStyle;
 @property (nonatomic) BOOL animationOngoing;
 
 - (id)initWithHoverStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle;
-
--(void)updateHoverViewProgressWithProgressValue:(float)progress;
--(void)updateHoverViewStatus:(NSString *)status;
--(void)hoverViewStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle animated:(BOOL)animated completion:(void (^)(BOOL finished))completion;
--(void)updateHoverViewStatus:(NSString *)status progressValue:(float)progress;
 
 @end

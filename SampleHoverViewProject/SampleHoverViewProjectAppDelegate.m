@@ -68,8 +68,10 @@
             for (iCntr=0; iCntr<1000000000; iCntr++) {
                 if ((iCntr % 1000)==0) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [blockSelf.hoverViewController updateHoverViewProgressWithProgressValue:(float)iCntr/1000000000.0 ];
-                        [blockSelf.hoverViewController updateHoverViewStatus: [NSString stringWithFormat:@"Value:  %f",iCntr/1000000000.0]];
+                        //[blockSelf.hoverViewController updateHoverViewProgressWithProgressValue:(float)iCntr/1000000000.0 ];
+                        // [blockSelf.hoverViewController updateHoverViewStatus: [NSString stringWithFormat:@"Value:  %f",iCntr/1000000000.0]];
+                        [blockSelf.hoverViewController updateHoverViewStatus:[NSString stringWithFormat:@"Value:  %f",iCntr/1000000000.0]
+                                                               progressValue:(float)iCntr/1000000000.0];
                     });
                 }
                 

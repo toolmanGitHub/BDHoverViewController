@@ -29,7 +29,6 @@ typedef NSInteger BDHoverViewStatusStyle;
 /** 
  
  @param hoverViewStatusStyle The style of the status hover view.
- @param animated Boolean which determines the change in hoverViewStatusStyle is animated.
  @param completion Completion block that is executed after the animation is complete.
  
  */

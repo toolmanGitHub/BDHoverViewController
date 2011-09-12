@@ -428,21 +428,21 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 
 - (IBAction)progress:(id)sender {
     if (!self.animationOngoing) {
-        [self hoverViewStatusStyle:BDHoverViewStatusActivityProgressStyle animated:YES completion:nil];
+        [self hoverViewStatusStyle:BDHoverViewStatusActivityProgressStyle completion:nil];
     }
     
 }
 
 - (IBAction)Status:(id)sender {
     if (!self.animationOngoing) {
-        [self hoverViewStatusStyle:BDHoverViewStatusActivityAndStatusStyle animated:YES completion:nil];
+        [self hoverViewStatusStyle:BDHoverViewStatusActivityAndStatusStyle completion:nil];
     }
     
 }
 
 - (IBAction)Only:(id)sender {
     //  if (!self.animationOngoing) {
-        [self hoverViewStatusStyle:BDHoverViewStatusActivityOnlyStyle animated:YES completion:nil];
+        [self hoverViewStatusStyle:BDHoverViewStatusActivityOnlyStyle completion:nil];
     // }
     
 
@@ -450,7 +450,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 
 - (IBAction)ExclusiveTouch:(id)sender {
     //  if (!self.animationOngoing) {
-    [self hoverViewStatusStyle:BDHoverViewStatusExclusiveTouchStyle animated:YES completion:nil];
+    [self hoverViewStatusStyle:BDHoverViewStatusExclusiveTouchStyle completion:nil];
     // }
     
     

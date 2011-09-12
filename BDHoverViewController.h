@@ -44,13 +44,27 @@
 
 
 @class BDHoverView;
+/** Controls the style and animations the different styles of the BDHoverView.
+ 
+ The animations from one style to another are accomplished by cascading two UIView's animateWithDuration:animations:completion calls.  The animation blocks are created dynamically based upon what UI elements are required (either removed or added) and the size of the BDHoverView.
+ 
+*/
+
 @interface BDHoverViewController : UIViewController <BDStatusUpdateProtocol>{
 	
     
 }
-
+/** Flag for whether or not the BDHoverView is currently animating from one style to another.
+ 
+ */
 @property (nonatomic) BOOL animationOngoing;
 
+
+/** Initializes the BDHoverViewController and associated BDHoverView with a specific status.
+ 
+ @param hoverViewStatusStyle The style of the BDHoverView.
+ @see BDStatusUpdateProtocol
+ */
 - (id)initWithHoverStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle;
 
 @end

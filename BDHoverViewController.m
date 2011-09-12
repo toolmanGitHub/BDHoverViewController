@@ -569,7 +569,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 
 #pragma mark -
 #pragma mark hoverView Animation
--(void)hoverViewStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle animated:(BOOL)animated completion:(void (^)(BOOL finished))completion{
+-(void)hoverViewStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle completion:(void (^)(BOOL finished))completion{
 
     if (self.animationOngoing || hoverViewStatusStyle==self.hoverViewStatusStyle) {
         return;

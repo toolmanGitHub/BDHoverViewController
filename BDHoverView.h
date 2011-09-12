@@ -41,12 +41,25 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-
+/**
+ A subclass of UIView that has the following main characteristics
+ 
+ 1. Semi-transparent black backgroundColor
+ 2. Rounded Corners
+ 3. Drop shadow that uses animation code adapted from Omnigroup's UIView Shadow performance demonstration.  Class can be found here:  https://github.com/omnigroup/OmniGroup/blob/master/Frameworks/OmniUI/iPad/Examples/DropShadowOptions/Classes/LayerShadowPathDemo.m 
+ 
+*/
 
 @interface BDHoverView : UIView {
 	
     
 }
+
+/** Duration of the view's animation.
+
+Normally this would be a static value, but depending on the animations in BDHoverViewController, it may need to change on the fly.
+
+ */
 @property (nonatomic) NSTimeInterval animationDuration;
 
 @end

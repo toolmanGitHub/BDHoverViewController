@@ -330,7 +330,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"BDHoverViewController\" \\\n--project-company \"Big Diggy SW\" \\\n--company-id com.bigdiggy \\\n--output ~/help \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--exit-threshold 2 \\\n--ignore .m \\\n--ignore UnitTest \\\n--no-repeat-first-par \\\n\"${PROJECT_DIR}\"";
+			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"BDHoverViewController\" \\\n--project-company \"Big Diggy SW\" \\\n--company-id com.bigdiggy \\\n--output ~/help \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--exit-threshold 2 \\\n--ignore .m \\\n--ignore SampleHoverViewProjectAppDelegate.h \\\n--ignore UnitTest \\\n--no-repeat-first-par \\\n\"${PROJECT_DIR}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -559,6 +559,7 @@
 				ECA96F1F141DD2DC0064BB97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

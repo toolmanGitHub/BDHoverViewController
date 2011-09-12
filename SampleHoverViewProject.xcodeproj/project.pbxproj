@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC2D23611409A59D00CCB092 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC2D23601409A59D00CCB092 /* README.txt */; };
+		EC65D931141D9EB500CB16C8 /* BDStatusUpdateProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = EC55F54C141D056E00E756C5 /* BDStatusUpdateProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC89849B140996F100CB12E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849A140996F100CB12E2 /* UIKit.framework */; };
 		EC89849D140996F100CB12E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849C140996F100CB12E2 /* Foundation.framework */; };
 		EC8984A5140996F100CB12E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC8984A3140996F100CB12E2 /* InfoPlist.strings */; };
@@ -174,6 +175,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC65D931141D9EB500CB16C8 /* BDStatusUpdateProtocol.h in Headers */,
 				EC8EA0E8141AFC9900EB14AF /* BDHoverView.h in Headers */,
 				EC8EA0E9141AFC9B00EB14AF /* BDHoverViewController.h in Headers */,
 			);

@@ -1,5 +1,3 @@
-#import "BDHoverViewController.h"
-
 enum  {
     BDHoverViewStatusNothingStyle=-1,
     BDHoverViewStatusExclusiveTouchStyle=100,
@@ -9,7 +7,7 @@ enum  {
 };
 typedef NSInteger BDHoverViewStatusStyle;
 
-@protocol BDStatusUpdateProtocol
+@protocol BDStatusUpdateProtocol <NSObject>
 @required
 -(void)updateHoverViewProgressWithProgressValue:(float)progress;
 -(void)updateHoverViewStatus:(NSString *)status;

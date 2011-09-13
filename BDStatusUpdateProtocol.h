@@ -10,11 +10,11 @@ typedef NSInteger BDHoverViewStatusStyle;
  Protocol that defines methods that a view controller is required to implement in order to update the user with progress or status information.
  
     `enum  {
-    BDHoverViewStatusNothingStyle=-1,
-    BDHoverViewStatusExclusiveTouchStyle=100,
-    BDHoverViewStatusActivityOnlyStyle,
-    BDHoverViewStatusActivityAndStatusStyle,
-    BDHoverViewStatusActivityProgressStyle,
+    BDHoverViewStatusNothingStyle=-1,  
+    BDHoverViewStatusExclusiveTouchStyle=100, Just a full screen semi-transparent view
+    BDHoverViewStatusActivityOnlyStyle,       Hover view with rounded corners that shows only a UIActivityIndicator
+    BDHoverViewStatusActivityAndStatusStyle,  Hover view with rounded corners a UIActivityIndicator and a status UILabel
+    BDHoverViewStatusActivityProgressStyle,   Hover view with rounded corners, UIActivityIndicator, status UILabel, and UIProgressView
     };
     typedef NSInteger BDHoverViewStatusStyle;`
  

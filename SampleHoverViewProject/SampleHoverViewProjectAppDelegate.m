@@ -90,7 +90,7 @@
     NSInteger displayStyle=random()%4+100;
     __block SampleHoverViewProjectAppDelegate *blockSelf=self;
     dispatch_async(dispatch_get_main_queue(), ^{
-        [blockSelf.hoverViewController hoverViewStatusStyle:displayStyle completion:nil];
+        [blockSelf.hoverViewController animateToHoverViewStatusStyle:displayStyle completion:nil];
     });
     
 }

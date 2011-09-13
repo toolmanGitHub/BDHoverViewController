@@ -62,6 +62,7 @@
 
 /** Initializes the BDHoverViewController and associated BDHoverView with a specific status.
  
+ @return An initialized hover view controller object or nil if the object couldn't be created.
  @param hoverViewStatusStyle The style of the BDHoverView.
  @see BDStatusUpdateProtocol
  */

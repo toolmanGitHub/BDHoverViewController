@@ -9,6 +9,15 @@ typedef NSInteger BDHoverViewStatusStyle;
 /**
  Protocol that defines methods that a view controller is required to implement in order to update the user with progress or status information.
  
+    `enum  {
+    BDHoverViewStatusNothingStyle=-1,
+    BDHoverViewStatusExclusiveTouchStyle=100,
+    BDHoverViewStatusActivityOnlyStyle,
+    BDHoverViewStatusActivityAndStatusStyle,
+    BDHoverViewStatusActivityProgressStyle,
+    };
+    typedef NSInteger BDHoverViewStatusStyle;`
+ 
  */
 @protocol BDStatusUpdateProtocol <NSObject>
 @required
@@ -32,7 +41,7 @@ typedef NSInteger BDHoverViewStatusStyle;
  @param completion Completion block that is executed after the animation is complete.
  
  */
--(void)hoverViewStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle completion:(void (^)(BOOL finished))completion;
+-(void)animateToHoverViewStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle completion:(void (^)(BOOL finished))completion;
 
 /** Updates both the progress of the UIProgressView and the status of the view's UILabel.
  

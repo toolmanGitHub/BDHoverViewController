@@ -348,7 +348,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     if (currentStatusString_!=nil) {
         aStatusLabel.text=self.currentStatusString;
     }else{
-        aStatusLabel.text=@"Yeah, a really long status message";
+        aStatusLabel.text=@"";
     }
     
     return [aStatusLabel autorelease];

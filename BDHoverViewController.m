@@ -686,10 +686,11 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
                                               [completionBlocks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                                                   animationBlock completionBlock=obj;
                                                   completionBlock();
-                                                  if (completion!=nil) {
-                                                      completion(finished);
-                                                  }
+                                                  
                                               }];  // [completionBlocks enumerateObjectsUsingBlock:
+                                              if (completion!=nil) {
+                                                  completion(finished);
+                                              }
                                           } // completion:^(BOOL finished)
                           
                           ]; //[UIView animateWithDuration:3.0*ANIMATION_DURATION/4.0

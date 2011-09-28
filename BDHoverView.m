@@ -56,7 +56,6 @@
         
         // Visible UIView Related Properties
         self.backgroundColor=[UIColor blackColor];
-        self.alpha=0.7;
         self.opaque=YES;
         self.autoresizesSubviews=NO;
         

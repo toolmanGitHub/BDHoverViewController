@@ -10,13 +10,13 @@ BDHoverViewController makes extensive use of blocks in order to build the animat
 **Notes:**  As of 10/14/2011, BDHoverview has been converted to Automatic Reference Counting and will only work on iOS5 and greater.
 
 The Activity only style looks like this:
-![screenshot](https://github.com/toolmanGitHub/BDHoverViewController/raw/master/activityScreenShot.png)
+![activityScreenShot](https://github.com/toolmanGitHub/BDHoverViewController/raw/master/activityScreenShot.png)
 
 The Activity with Status Label style looks like this:
-![screenshot](https://github.com/toolmanGitHub/BDHoverViewController/raw/master/statusScreenShot.png)
+![statusScreenShot](https://github.com/toolmanGitHub/BDHoverViewController/raw/master/statusScreenShot.png)
 
 The Activity, Status, and Progress style looks like this:
-![screenshot](https://github.com/toolmanGitHub/BDHoverViewController/raw/master/progressScreenShot.png)
+![progressScreenShot](https://github.com/toolmanGitHub/BDHoverViewController/raw/master/progressScreenShot.png)
 
 **Notes:**  As of 10/14/2011, BDHoverview has been converted to Automatic Reference Counting and will only work on iOS5 and greater.
 

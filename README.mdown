@@ -37,9 +37,9 @@ The status label and progress ui can be update at the same time using: -(void)up
 
 Animating from one Hover View Style to another is simple using this method:  -(void)animateToHoverViewStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle completion:(void (^)(BOOL finished))completion.  The completion block is useful for any other clean up code that you may want to execute.
 <pre><code>[hoverViewController_ animateToHoverViewStyle:BDHoverViewStatusActivityProgressStyle
-                                       completion:^(BOOL finished){
+                                   completion:^(BOOL finished){
                                             NSLog(@"animation finished");
-                                        }];</code></pre>
+                                   }];</code></pre>
 
 The Activity only style looks like this:
 ![activityScreenShot](https://github.com/toolmanGitHub/BDHoverViewController/raw/master/activityScreenShot.png)

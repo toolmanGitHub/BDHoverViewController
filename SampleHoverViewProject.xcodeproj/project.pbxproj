@@ -21,7 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		EC2D23611409A59D00CCB092 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = EC2D23601409A59D00CCB092 /* README.mdown */; };
 		EC65D931141D9EB500CB16C8 /* BDStatusUpdateProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = EC55F54C141D056E00E756C5 /* BDStatusUpdateProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC89849B140996F100CB12E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849A140996F100CB12E2 /* UIKit.framework */; };
 		EC89849D140996F100CB12E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849C140996F100CB12E2 /* Foundation.framework */; };
@@ -61,7 +60,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EC2D23601409A59D00CCB092 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 		EC55F54C141D056E00E756C5 /* BDStatusUpdateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDStatusUpdateProtocol.h; sourceTree = "<group>"; };
 		EC898496140996F100CB12E2 /* SampleHoverViewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleHoverViewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC89849A140996F100CB12E2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -115,7 +113,6 @@
 		EC89848B140996F100CB12E2 = {
 			isa = PBXGroup;
 			children = (
-				EC2D23601409A59D00CCB092 /* README.mdown */,
 				EC8984C41409999500CB12E2 /* BDHoverViewController */,
 				EC8984A0140996F100CB12E2 /* SampleHoverViewProject */,
 				EC898499140996F100CB12E2 /* Frameworks */,
@@ -278,7 +275,6 @@
 			files = (
 				EC8984A5140996F100CB12E2 /* InfoPlist.strings in Resources */,
 				EC8984C31409995B00CB12E2 /* MainWindow.xib in Resources */,
-				EC2D23611409A59D00CCB092 /* README.mdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

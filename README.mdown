@@ -20,7 +20,27 @@ Adding the hoverview at runtime is easy.
 </code></pre>
 
 The BDHoverViewController adheres to the BDStatusUpdateProtocol.  Therefore it will respond to the following update methods:
+-(void)updateHoverViewProgressWithProgressValue:(float)progress;
+<pre><code>
+    [hoverViewController_ updateHoverViewProgressWithProgressValue: 0.5f];
+</code></pre>
 
+-(void)updateHoverViewStatus:(NSString *)status;
+<pre><code>
+    [hoverViewController_ updateHoverViewStatus: @"Contacting App Store..."];
+</code></pre>
+
+-(void)updateHoverViewStatus:(NSString *)status progressValue:(float)progress;
+<pre><code>
+    [hoverViewController_ updateHoverViewStatus: @"Updating Files..." progressValue: 0.75f];
+</code></pre>
+
+-(void)animateToHoverViewStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle completion:(void (^)(BOOL finished))completion;
+<pre><code>
+    [hoverViewController_ animateToHoverViewStyle:BDHoverViewStatusActivityProgressStyle completion:^(BOOL finished){
+        NSLog(@"animation finished");
+        }];
+</code></pre>
 
 The Activity only style looks like this:
 ![activityScreenShot](https://github.com/toolmanGitHub/BDHoverViewController/raw/master/activityScreenShot.png)

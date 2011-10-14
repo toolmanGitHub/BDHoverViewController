@@ -40,6 +40,7 @@
 		EC8EA0EF141AFCD500EB14AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849A140996F100CB12E2 /* UIKit.framework */; };
 		ECF0E9811409A0FB00CDB86F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849E140996F100CB12E2 /* CoreGraphics.framework */; };
 		ECF0E9831409A26300CDB86F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF0E9821409A26200CDB86F /* QuartzCore.framework */; };
+		ECF41B371448A3220067EC0A /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = ECF41B361448A3220067EC0A /* README.mdown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		EC8EA0DF141AFC2900EB14AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EC8EA0E1141AFC2900EB14AF /* BDHoverViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BDHoverViewController-Prefix.pch"; sourceTree = "<group>"; };
 		ECF0E9821409A26200CDB86F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		ECF41B361448A3220067EC0A /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		EC89848B140996F100CB12E2 = {
 			isa = PBXGroup;
 			children = (
+				ECF41B361448A3220067EC0A /* README.mdown */,
 				EC8984C41409999500CB12E2 /* BDHoverViewController */,
 				EC8984A0140996F100CB12E2 /* SampleHoverViewProject */,
 				EC898499140996F100CB12E2 /* Frameworks */,
@@ -275,6 +278,7 @@
 			files = (
 				EC8984A5140996F100CB12E2 /* InfoPlist.strings in Resources */,
 				EC8984C31409995B00CB12E2 /* MainWindow.xib in Resources */,
+				ECF41B371448A3220067EC0A /* README.mdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

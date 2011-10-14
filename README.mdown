@@ -9,6 +9,20 @@ BDHoverViewController makes extensive use of blocks in order to build the animat
 
 **Notes:**  As of 10/14/2011, BDHoverview has been converted to Automatic Reference Counting and will only work on iOS5 and greater.
 
+**Usage**
+Adding the hoverview at runtime is easy.
+1.  First create an instance of the BDHoverview as follows:
+<pre><code>
+hoverViewController_=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusExclusiveTouchStyle];
+    hoverViewController_.modalTransitionStyle=UIModalTransitionStyleCrossDissolve;
+    //   [self.window addSubview:hoverViewController_.view];
+    self.window.rootViewController.modalPresentationStyle=UIModalPresentationCurrentContext;
+    [self.window.rootViewController presentModalViewController:hoverViewController_ animated:YES]; 
+</code></pre>
+
+The BDHoverViewController adheres to the BDStatusUpdateProtocol.  Therefore it will respond to the following update methods:
+
+
 The Activity only style looks like this:
 ![activityScreenShot](https://github.com/toolmanGitHub/BDHoverViewController/raw/master/activityScreenShot.png)
 

@@ -20,22 +20,22 @@ Adding the hoverview at runtime is easy.
 </code></pre>
 
 The BDHoverViewController adheres to the BDStatusUpdateProtocol.  Therefore it will respond to the following update methods:
--(void)updateHoverViewProgressWithProgressValue:(float)progress;
+To update just the UIProgressView use: -(void)updateHoverViewProgressWithProgressValue:(float)progress.  Even if the BDHoverViewStatusActivityProgressStyle style is not being shown, the progressValue will be saved.  This allows the progressView to be animated correctly, if and when you do choose to animate to the BDHoverViewStatusActivityProgressStyle.  The usage is as follows.
 <pre><code>
     [hoverViewController_ updateHoverViewProgressWithProgressValue: 0.5f];
 </code></pre>
 
--(void)updateHoverViewStatus:(NSString *)status;
+To update just the UILabel for status use: -(void)updateHoverViewStatus:(NSString *)status.  Just like the with the UIProgressView above, this can be used even when the statusLabel is not visible to ensure that the status is available for when you choose to animate to a Hover View Status style that includes it.  Here is the usage:
 <pre><code>
     [hoverViewController_ updateHoverViewStatus: @"Contacting App Store..."];
 </code></pre>
 
--(void)updateHoverViewStatus:(NSString *)status progressValue:(float)progress;
+The status label and progress ui can be update at the same time using: -(void)updateHoverViewStatus:(NSString *)status progressValue:(float)progress.  Here is the usage.
 <pre><code>
     [hoverViewController_ updateHoverViewStatus: @"Updating Files..." progressValue: 0.75f];
 </code></pre>
 
--(void)animateToHoverViewStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle completion:(void (^)(BOOL finished))completion;
+Animating from one Hover View Style to another is simple using this method:  -(void)animateToHoverViewStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle completion:(void (^)(BOOL finished))completion.  The completion block is useful for any other clean up code that you may want to execute.
 <pre><code>
     [hoverViewController_ animateToHoverViewStyle:BDHoverViewStatusActivityProgressStyle completion:^(BOOL finished){
         NSLog(@"animation finished");

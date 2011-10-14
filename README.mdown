@@ -13,9 +13,8 @@ BDHoverViewController makes extensive use of blocks in order to build the animat
 Adding the hoverview at runtime is easy.
 1.  First create an instance of the BDHoverview as follows:
 <pre><code>
-hoverViewController_=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusExclusiveTouchStyle];
+    hoverViewController_=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusExclusiveTouchStyle];
     hoverViewController_.modalTransitionStyle=UIModalTransitionStyleCrossDissolve;
-    //   [self.window addSubview:hoverViewController_.view];
     self.window.rootViewController.modalPresentationStyle=UIModalPresentationCurrentContext;
     [self.window.rootViewController presentModalViewController:hoverViewController_ animated:YES]; 
 </code></pre>

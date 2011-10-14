@@ -52,7 +52,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
-    self.uiChangeTimer=[NSTimer scheduledTimerWithTimeInterval:1.75 target:self selector:@selector(timerFiredMethod) userInfo:nil repeats:YES];
+     self.uiChangeTimer=[NSTimer scheduledTimerWithTimeInterval:1.75 target:self selector:@selector(timerFiredMethod) userInfo:nil repeats:YES];
 	
     
     hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle];
@@ -80,7 +80,7 @@
         });
     });
     
-    
+   
 	
     
     return YES;

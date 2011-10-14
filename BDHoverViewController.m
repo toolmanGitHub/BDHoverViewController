@@ -42,19 +42,11 @@
 #import <QuartzCore/QuartzCore.h>
 
 #define ANIMATION_DURATION 0.4f
-#define DEMO NO
+#define DEMO YES
 typedef void (^animationBlock)(void);
 
 @interface BDHoverViewController (){
-    BDHoverView *hoverView_;
-    BDHoverViewStatusStyle hoverViewStatusStyle_;
-    
-    UIActivityIndicatorView *activityIndicator_;
-    UILabel *statusLabel_;
-    UIProgressView *progressView_;
-    
-    NSString *currentStatusString_;
-    float currentProgress_;
+   
     
 }
 @property (nonatomic,retain) BDHoverView *hoverView;
@@ -64,6 +56,7 @@ typedef void (^animationBlock)(void);
 @property (nonatomic, retain) UIProgressView *progressView;
 @property (nonatomic, retain) NSString *currentStatusString;
 @property (nonatomic) float currentProgress;
+@property (nonatomic) float animationDuration;
 
 -(BDHoverView *)hoverViewForStyle:(BDHoverViewStatusStyle)hoverViewStyle;
 -(CGRect)hoverViewFrameForStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle;
@@ -99,12 +92,14 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 @synthesize progressView = progressView_;
 @synthesize currentStatusString = currentStatusString_;
 @synthesize currentProgress = currentProgress_;
+@synthesize animationDuration = animationDuration_;
 
 
 - (id)initWithHoverStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle{
     self = [super init];
     if (self){
         hoverViewStatusStyle_=hoverViewStatusStyle;
+        animationDuration_=ANIMATION_DURATION;
     }
     return self;
 }
@@ -148,24 +143,36 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     [semiTransparentView release];
     
     if (DEMO) {
-        UIButton *aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-        aButton.frame=CGRectMake(10, 10, 50, 37);
+        UIButton *aButton=nil;
+        aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+        aButton.frame=CGRectMake(10, 10, 200, 37);
+        [aButton setTitle:@"Exclusive Touch" forState:UIControlStateNormal];
         [aButton addTarget:self action:@selector(ExclusiveTouch:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:aButton];
         
         aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-        aButton.frame=CGRectMake(10, 50, 50, 37);
+        aButton.frame=CGRectMake(10, 50, 200, 37);
+        [aButton setTitle:@"Activity Only" forState:UIControlStateNormal];
         [aButton addTarget:self action:@selector(Only:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:aButton];
         
         aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-        aButton.frame=CGRectMake(10, 90, 50, 37);
+        aButton.frame=CGRectMake(10, 90, 200, 37);
+         [aButton setTitle:@"Activity/Status" forState:UIControlStateNormal];
         [aButton addTarget:self action:@selector(Status:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:aButton];
         
         aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-        aButton.frame=CGRectMake(10, 130, 50, 37);
+        aButton.frame=CGRectMake(10, 130, 200, 37);
+        [aButton setTitle:@"Progress/Status" forState:UIControlStateNormal];
         [aButton addTarget:self action:@selector(progress:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:aButton];
+        
+        aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+        aButton.frame=CGRectMake(10, 170, 300, 37);
+        aButton.tag=0;
+        [aButton setTitle:@"Toggle to Normal Animation" forState:UIControlStateNormal];
+        [aButton addTarget:self action:@selector(toggleAnimationDuration:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:aButton];
 
     }
@@ -348,7 +355,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     if (currentStatusString_!=nil) {
         aStatusLabel.text=self.currentStatusString;
     }else{
-        aStatusLabel.text=@"";
+        aStatusLabel.text=@"Some Really Long Text";
     }
     
     return [aStatusLabel autorelease];
@@ -361,7 +368,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     switch (hoverViewStyle) {
         case BDHoverViewStatusActivityOnlyStyle:
         {
-            statusLabelFrame=CGRectMake(10.0f, 0.0f, 248.0f, 21.0f);
+            statusLabelFrame=CGRectMake(10.0f, 60.0f, 0.0f, 21.0f);
             break;
         }
         case BDHoverViewStatusActivityAndStatusStyle:
@@ -388,6 +395,8 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 -(UIProgressView *)progressViewForStyle:(BDHoverViewStatusStyle)hoverViewStyle{
     UIProgressView *aProgressView=[[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
     aProgressView.alpha=0.0;
+    aProgressView.opaque=YES;
+    aProgressView.backgroundColor  =[UIColor clearColor];
     aProgressView.autoresizingMask=UIViewAutoresizingNone;
 
     aProgressView.frame=[self progressViewFrameForStyle:hoverViewStyle];
@@ -402,7 +411,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     switch (hoverViewStatusStyle) {
         case BDHoverViewStatusActivityOnlyStyle:
         {
-            progressViewFrame=CGRectMake(22.0f,77.0f,5.0f,9.0f);
+            progressViewFrame=CGRectMake(0.0f,77.0f,5.0f,9.0f);
             break;
             
         }
@@ -456,6 +465,22 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     
 }
 
+-(IBAction)toggleAnimationDuration:(UIButton *)sender{
+    
+    if (sender.tag==0) {
+        NSLog(@"slow animation toggle to normal");
+        self.animationDuration=ANIMATION_DURATION;
+        [sender setTitle:@"Toggle to Slow Animation" forState:UIControlStateNormal];
+        sender.tag=1;
+        
+    }else{
+        NSLog(@"normal animation toggle to normal");
+        self.animationDuration=5.0f;
+        [sender setTitle:@"Toggle to Normal Animation" forState:UIControlStateNormal];
+        sender.tag=0;
+    }
+}
+
 
 #pragma mark -
 #pragma mark Populating Animation Block Arrays
@@ -489,7 +514,7 @@ void StatusLabelAnimationBlocksForStyle(BDHoverViewController *self, BDHoverView
     if ( (hoverViewStatusStyle==BDHoverViewStatusActivityAndStatusStyle || hoverViewStatusStyle==BDHoverViewStatusActivityProgressStyle)) {
         
         if (self.statusLabel==nil) {
-            self.statusLabel=[self statusLabelForStyle:hoverViewStatusStyle];
+            self.statusLabel=[self statusLabelForStyle:self.hoverViewStatusStyle];
         }
         
         if (self.statusLabel.superview==nil) {
@@ -521,7 +546,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     animationBlock secondBlock=nil;
     animationBlock completionBlock=nil;
     __block BDHoverViewController *blockSelf=self;
-
+    
     // Progress View
     if (hoverViewStatusStyle!=BDHoverViewStatusActivityProgressStyle && (self.progressView!=nil)) {
         
@@ -574,10 +599,9 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     if (self.animationOngoing || hoverViewStatusStyle==self.hoverViewStatusStyle) {
         return;
     }
-       NSLog(@"hoverViewStatusStyle animation start");
-    
+     
     self.animationOngoing=YES;
-    self.hoverView.animationDuration=3*ANIMATION_DURATION/4.0f;
+    self.hoverView.animationDuration=3*self.animationDuration/4.0f;
 
     
     NSMutableArray *firstStageAnimationBlocks=[NSMutableArray arrayWithCapacity:1];
@@ -607,7 +631,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
        [self.view addSubview:self.hoverView];
         
         // Set the animationDuration for the hoverView so that the shadow's animation is in sync.
-        self.hoverView.animationDuration=ANIMATION_DURATION/4.0f;
+        self.hoverView.animationDuration=self.animationDuration/4.0f;
         
         firstBlock=[^{
             blockSelf.hoverView.frame=newHoverViewFrame;
@@ -650,21 +674,21 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
             [completionBlock release];
                
         }else{
-            
-            StatusLabelAnimationBlocksForStyle(self, hoverViewStatusStyle, &firstStageAnimationBlocks, &secondStageAnimationBlocks,&completionBlocks);
-            ProgressViewAnimationBlocksForStyle(self, hoverViewStatusStyle, &firstStageAnimationBlocks, &secondStageAnimationBlocks, &completionBlocks);
-                        
             secondBlock=[^{
                 blockSelf.hoverView.frame=[self hoverViewFrameForStyle:hoverViewStatusStyle];
                 blockSelf.activityIndicator.frame=[self activityIndicatorFrameForStyle:hoverViewStatusStyle];
             } copy];
             [secondStageAnimationBlocks addObject: secondBlock];
             [secondBlock release];
+            StatusLabelAnimationBlocksForStyle(self, hoverViewStatusStyle, &firstStageAnimationBlocks, &secondStageAnimationBlocks,&completionBlocks);
+            ProgressViewAnimationBlocksForStyle(self, hoverViewStatusStyle, &firstStageAnimationBlocks, &secondStageAnimationBlocks, &completionBlocks);
+                        
+           
         }
         
     }
     
-    [UIView animateWithDuration:ANIMATION_DURATION/4.0f
+    [UIView animateWithDuration:self.animationDuration/4.0f
                      animations:^{
                          [firstStageAnimationBlocks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                              animationBlock firstBlock=obj;
@@ -672,7 +696,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
                          }]; //[firstStageAnimationBlocks enumerateObjectsUsingBlock:
                      } //animations:^{
                      completion:^(BOOL finished) {
-                         [UIView animateWithDuration:3.0*ANIMATION_DURATION/4.0f
+                         [UIView animateWithDuration:3.0*self.animationDuration/4.0f
                                           animations:^{
                                               [secondStageAnimationBlocks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                                                   animationBlock secondBlock=obj;

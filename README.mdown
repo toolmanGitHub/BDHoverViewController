@@ -18,8 +18,6 @@ The Activity with Status Label style looks like this:
 The Activity, Status, and Progress style looks like this:
 ![progressScreenShot](https://github.com/toolmanGitHub/BDHoverViewController/raw/master/progressScreenShot.png)
 
-**Notes:**  As of 10/14/2011, BDHoverview has been converted to Automatic Reference Counting and will only work on iOS5 and greater.
-
 License
 
 The below license is the new BSD license with the OSI recommended personalizations.

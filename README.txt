@@ -7,6 +7,8 @@ This sample demonstrates the use of the BDHoverViewController.  BDHoverViewContr
 
 BDHoverViewController makes extensive use of blocks in order to build the animations for transitions from one hoverView style to the other.  The use of NSMutableArray and blocks allow the building of the animations on the fly.
 
+Notes:  As of 10/14/2011, BDHoverview has been converted to Automatic Reference Counting and will only work on iOS5 and greater.
+
 License
 
 The below license is the new BSD license with the OSI recommended personalizations.

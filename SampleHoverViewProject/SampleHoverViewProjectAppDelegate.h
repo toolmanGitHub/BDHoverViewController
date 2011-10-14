@@ -44,7 +44,7 @@
 @class BDHoverViewController;
 @interface SampleHoverViewProjectAppDelegate : NSObject <UIApplicationDelegate>
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic,retain) NSTimer *uiChangeTimer;
-@property (nonatomic,retain) BDHoverViewController *hoverViewController;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
+@property (nonatomic,strong) NSTimer *uiChangeTimer;
+@property (nonatomic,strong) BDHoverViewController *hoverViewController;
 @end

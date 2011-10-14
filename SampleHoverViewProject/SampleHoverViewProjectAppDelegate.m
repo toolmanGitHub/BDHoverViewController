@@ -61,7 +61,7 @@
     
     NSTimeInterval delay_in_seconds = 3.0;
 	dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, delay_in_seconds * NSEC_PER_SEC);
-	__block SampleHoverViewProjectAppDelegate *blockSelf=self;
+	__weak SampleHoverViewProjectAppDelegate *blockSelf=self;
 	dispatch_after(delay, dispatch_get_main_queue(), ^{
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW,0),^{
             NSInteger iCntr=0;
@@ -88,7 +88,7 @@
 
 -(void)timerFiredMethod{
     NSInteger displayStyle=random()%4+100;
-    __block SampleHoverViewProjectAppDelegate *blockSelf=self;
+    __weak SampleHoverViewProjectAppDelegate *blockSelf=self;
     dispatch_async(dispatch_get_main_queue(), ^{
         [blockSelf.hoverViewController animateToHoverViewStatusStyle:displayStyle completion:nil];
     });
@@ -129,11 +129,7 @@
 
 
 - (void)dealloc {
-    [_window release];
     [uiChangeTimer invalidate];
-    [uiChangeTimer release];
-    [hoverViewController release];
-    [super dealloc];
 }
 
 @end

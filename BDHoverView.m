@@ -99,10 +99,10 @@
     CGMutablePathRef oldShadowPath = CGPathCreateMutable();
     CGPathAddRect(oldShadowPath, NULL/*transform*/, oldBounds);
     
-    shadowAnimation.fromValue = (id)oldShadowPath;
+    shadowAnimation.fromValue = (__bridge id)oldShadowPath;
     CFRelease(oldShadowPath);
     
-    shadowAnimation.toValue = (id)newShadowPath;
+    shadowAnimation.toValue = (__bridge id)newShadowPath;
     
     shadowAnimation.duration = self.animationDuration;
  
@@ -115,9 +115,6 @@
  }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 @end

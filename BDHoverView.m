@@ -55,9 +55,16 @@
         animationDuration_=1.0f;
         
         // Visible UIView Related Properties
-        self.backgroundColor=[UIColor blackColor];
-        self.opaque=YES;
-        self.autoresizesSubviews=NO;
+        self.backgroundColor=[UIColor clearColor];
+        UIView *transparentView=[[UIView alloc] initWithFrame:self.bounds];
+        transparentView.autoresizingMask=UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        transparentView.backgroundColor=[UIColor blackColor];
+        transparentView.layer.cornerRadius=10.0f;
+        transparentView.alpha=0.95;
+        [self addSubview:transparentView];
+           self.opaque=NO;
+        // self.autoresizesSubviews=NO;
+        
         
         self.exclusiveTouch=YES;
         

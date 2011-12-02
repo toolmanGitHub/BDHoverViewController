@@ -250,7 +250,7 @@
 		EC89848D140996F100CB12E2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = EC898490140996F100CB12E2 /* Build configuration list for PBXProject "SampleHoverViewProject" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -517,6 +517,7 @@
 		ECA96F1E141DD2DC0064BB97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -524,6 +525,7 @@
 		ECA96F1F141DD2DC0064BB97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

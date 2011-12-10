@@ -9,61 +9,63 @@
 #import "BDLayer.h"
 #import <UIKit/UIKit.h>
 
-#define kBDRadius 15.0f
+#define kBDBevelRadius 15.0f
+#define kStrokeWidth 2.0f
 @interface BDLayer ()
 
-- (void)clipRoundedRect:(CGRect)rect inContext:(CGContextRef)context;
+-(void)clipRoundedRect:(CGRect)rect inContext:(CGContextRef)context;
 -(void)drawRoundedRect:(CGRect)rect inContext:(CGContextRef)context;
 -(void)drawBevelWithRect:(CGRect)rect inContext:(CGContextRef)context;
+
 @end
 @implementation BDLayer
 
 - (id)initWithLayer:(id)layer {
-    NSLog(@"initWithLayer start");
-	if((self = [super initWithLayer:layer])) {
+ 	if((self = [super initWithLayer:layer])) {
 		if([layer isKindOfClass:[BDLayer class]]) {
        }
 	}
-    NSLog(@"initWithLayer end");
-	return self;
+ 	return self;
 }
 
 
 
 -(void)drawInContext:(CGContextRef)ctx{
-    NSLog(@"start drawInContext");
+    
+    // We draw and fill like a painter
+    
+    // Clip first
     [self clipRoundedRect:self.bounds inContext:ctx];
     
+    //  draw and fill the background and set the alpha
     [self drawRoundedRect:self.bounds inContext:ctx];
     CGContextSetFillColorWithColor(ctx, [UIColor blackColor].CGColor);
     CGContextSetAlpha(ctx, 0.85f);
     CGContextFillPath(ctx);
     
+    
+    // Draw and fill the bevel    
+    [self drawBevelWithRect:self.bounds inContext:ctx];
     CGContextSetFillColorWithColor(ctx, [UIColor whiteColor].CGColor);
     CGContextSetAlpha(ctx, 0.25f);
-    [self drawBevelWithRect:self.bounds inContext:ctx];
     CGContextFillPath(ctx);
-//    
-//    
+    
+    // Draw and stroke the border
     [self drawRoundedRect:self.bounds inContext:ctx];
-    CGContextSetLineWidth(ctx, 5.0f);
+    CGContextSetLineWidth(ctx, kStrokeWidth);
     CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
     CGContextSetAlpha(ctx, 1.0f);
     CGContextDrawPath(ctx, kCGPathStroke);
-    NSLog(@"end drawInContext");
-
+ 
 }
 - (void)clipRoundedRect:(CGRect)rect inContext:(CGContextRef)context
 {
-    NSLog(@"    clipRoundedRect start");
     [self drawRoundedRect:rect inContext:context];
 	CGContextClip(context);
-    NSLog(@"    clipRoundedRect end");
-}
+ }
 
 -(void)drawRoundedRect:(CGRect)rect inContext:(CGContextRef)context{
-    NSLog(@"        drawRoundedRect start");
-	float radius = kBDRadius;
+ 	float radius = kBDBevelRadius;
      	
     CGContextBeginPath(context);
     CGContextMoveToPoint(context, CGRectGetMinX(rect) + radius, CGRectGetMinY(rect));
@@ -73,13 +75,11 @@
     CGContextAddArc(context, CGRectGetMinX(rect) + radius, CGRectGetMinY(rect) + radius, radius, M_PI, 3 * M_PI / 2, 0);
     
     CGContextClosePath(context);
-    NSLog(@"        drawRoundedRect end");
-	
-}
+ }
 
 -(void)drawBevelWithRect:(CGRect)rect inContext:(CGContextRef)context{
     
-    float radius = kBDRadius;
+    float radius = kBDBevelRadius;
     
     CGContextBeginPath(context);
     CGContextMoveToPoint(context, CGRectGetMinX(rect) + radius, CGRectGetMinY(rect));

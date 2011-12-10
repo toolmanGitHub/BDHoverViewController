@@ -46,6 +46,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EC653E8514941CEC0087AD50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC89848D140996F100CB12E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECA96F1C141DD2DC0064BB97;
+			remoteInfo = Documentation;
+		};
 		EC8EA0EB141AFCB800EB14AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC89848D140996F100CB12E2 /* Project object */;
@@ -237,6 +244,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EC653E8614941CEC0087AD50 /* PBXTargetDependency */,
 			);
 			name = BDHoverViewController;
 			productName = BDHoverViewController;
@@ -356,6 +364,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EC653E8614941CEC0087AD50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECA96F1C141DD2DC0064BB97 /* Documentation */;
+			targetProxy = EC653E8514941CEC0087AD50 /* PBXContainerItemProxy */;
+		};
 		EC8EA0EC141AFCB800EB14AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EC8EA0D8141AFC2900EB14AF /* BDHoverViewController */;

@@ -41,7 +41,7 @@
 #import "BDHoverView.h"
 #import <QuartzCore/QuartzCore.h>
 
-#define ANIMATION_DURATION 0.4f
+#define ANIMATION_DURATION 0.5f
 #define DEMO YES
 typedef void (^animationBlock)(void);
 
@@ -172,7 +172,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         [aButton setTitle:@"Toggle to Normal Animation" forState:UIControlStateNormal];
         [aButton addTarget:self action:@selector(toggleAnimationDuration:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:aButton];
-
+    
     }
     
     
@@ -198,7 +198,6 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     CGRect hoverViewFrame=[self hoverViewFrameForStyle:hoverViewStyle];
     
 	BDHoverView *aHoverView=[[BDHoverView alloc] initWithFrame:hoverViewFrame];
-    aHoverView.layer.opacity=0.7f;
     aHoverView.animationDuration=3*ANIMATION_DURATION/4.0;
     
    
@@ -409,13 +408,13 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     switch (hoverViewStatusStyle) {
         case BDHoverViewStatusActivityOnlyStyle:
         {
-            progressViewFrame=CGRectMake(0.0f,77.0f,5.0f,9.0f);
+            progressViewFrame=CGRectMake(0.0f,60.0f,5.0f,9.0f);
             break;
             
         }
         case BDHoverViewStatusActivityAndStatusStyle:
         {
-            progressViewFrame=CGRectMake(22.0f,77.0f,248.0f,9.0f);
+            progressViewFrame=CGRectMake(22.0f,50.0f,248.0f,9.0f);
             break;
             
         }
@@ -466,13 +465,11 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 -(IBAction)toggleAnimationDuration:(UIButton *)sender{
     
     if (sender.tag==0) {
-        NSLog(@"slow animation toggle to normal");
         self.animationDuration=ANIMATION_DURATION;
         [sender setTitle:@"Toggle to Slow Animation" forState:UIControlStateNormal];
         sender.tag=1;
         
     }else{
-        NSLog(@"normal animation toggle to normal");
         self.animationDuration=5.0f;
         [sender setTitle:@"Toggle to Normal Animation" forState:UIControlStateNormal];
         sender.tag=0;
@@ -581,7 +578,6 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     }
 }
 
-
 #pragma mark -
 #pragma mark hoverView Animation
 -(void)animateToHoverViewStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle completion:(void (^)(BOOL finished))completion{
@@ -613,27 +609,30 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         // style.
         
         self.hoverView = [self hoverViewForStyle:hoverViewStatusStyle];
-        CGRect newHoverViewFrame=self.hoverView.frame;
+        self.hoverView.transform=CGAffineTransformMakeScale(0.01f,0.01f);
+     
+        [self.view addSubview:self.hoverView];
         
-        // Set the frame for the current hoverView Style sto that the animation looks right.  This also ensures that the shadow of the hoverView looks right.
-        
-        self.hoverView.frame=[self hoverViewFrameForStyle:self.hoverViewStatusStyle];
-       [self.view addSubview:self.hoverView];
-        
+
         // Set the animationDuration for the hoverView so that the shadow's animation is in sync.
         self.hoverView.animationDuration=self.animationDuration/4.0f;
         
         firstBlock=[^{
-            blockSelf.hoverView.frame=newHoverViewFrame;
+            // Animate with a little bit bigger scale so it gets noticed.
+            blockSelf.hoverView.transform=CGAffineTransformMakeScale(1.1f, 1.1f);
+            blockSelf.activityIndicator.alpha=1.0f;
+            blockSelf.statusLabel.alpha=1.0f;
+            blockSelf.progressView.alpha=1.0f;
+            
         } copy];
         
         [firstStageAnimationBlocks addObject: firstBlock];
         
         
         secondBlock=[^{
-            blockSelf.activityIndicator.alpha=1.0f;
-            blockSelf.statusLabel.alpha=1.0f;
-            blockSelf.progressView.alpha=1.0f;
+            // Make sure we scale it back to the way it needs to be.
+            blockSelf.hoverView.transform=CGAffineTransformIdentity;
+            
         } copy];
         [secondStageAnimationBlocks addObject: secondBlock];
         
@@ -641,6 +640,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     }else{
         if (hoverViewStatusStyle==BDHoverViewStatusExclusiveTouchStyle) {
             firstBlock=[^{
+                blockSelf.hoverView.transform=CGAffineTransformMakeScale(0.95f, 0.95f);
                 blockSelf.hoverView.alpha=0.0f;
             } copy];
             
@@ -660,9 +660,11 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
             [completionBlocks addObject:completionBlock];
                
         }else{
-            secondBlock=[^{
-                blockSelf.hoverView.frame=[self hoverViewFrameForStyle:hoverViewStatusStyle];
-                blockSelf.activityIndicator.frame=[self activityIndicatorFrameForStyle:hoverViewStatusStyle];
+            
+            CGRect newHoverViewFrame=[self hoverViewFrameForStyle:hoverViewStatusStyle];
+           secondBlock=[^{
+               blockSelf.hoverView.bounds=CGRectMake(0, 0, newHoverViewFrame.size.width, newHoverViewFrame.size.height);
+               blockSelf.activityIndicator.frame=[self activityIndicatorFrameForStyle:hoverViewStatusStyle];
             } copy];
             [secondStageAnimationBlocks addObject: secondBlock];
             StatusLabelAnimationBlocksForStyle(self, hoverViewStatusStyle, &firstStageAnimationBlocks, &secondStageAnimationBlocks,&completionBlocks);

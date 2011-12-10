@@ -38,6 +38,8 @@
 		EC8EA0ED141AFCD500EB14AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849E140996F100CB12E2 /* CoreGraphics.framework */; };
 		EC8EA0EE141AFCD500EB14AF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF0E9821409A26200CDB86F /* QuartzCore.framework */; };
 		EC8EA0EF141AFCD500EB14AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849A140996F100CB12E2 /* UIKit.framework */; };
+		ECA12C5B14907C3F00F95161 /* BDLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA12C5914907C3F00F95161 /* BDLayer.h */; };
+		ECA12C5C14907C3F00F95161 /* BDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA12C5A14907C3F00F95161 /* BDLayer.m */; };
 		ECF0E9811409A0FB00CDB86F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849E140996F100CB12E2 /* CoreGraphics.framework */; };
 		ECF0E9831409A26300CDB86F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF0E9821409A26200CDB86F /* QuartzCore.framework */; };
 		ECF41B371448A3220067EC0A /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = ECF41B361448A3220067EC0A /* README.mdown */; };
@@ -50,13 +52,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = EC8EA0D8141AFC2900EB14AF;
 			remoteInfo = BDHoverViewController;
-		};
-		ECA96F21141DD5890064BB97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC89848D140996F100CB12E2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ECA96F1C141DD2DC0064BB97;
-			remoteInfo = Documentation;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -81,6 +76,8 @@
 		EC8EA0DD141AFC2900EB14AF /* BDHoverViewController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BDHoverViewController-Info.plist"; sourceTree = "<group>"; };
 		EC8EA0DF141AFC2900EB14AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EC8EA0E1141AFC2900EB14AF /* BDHoverViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BDHoverViewController-Prefix.pch"; sourceTree = "<group>"; };
+		ECA12C5914907C3F00F95161 /* BDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDLayer.h; sourceTree = "<group>"; };
+		ECA12C5A14907C3F00F95161 /* BDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDLayer.m; sourceTree = "<group>"; };
 		ECF0E9821409A26200CDB86F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ECF41B361448A3220067EC0A /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +168,8 @@
 				EC8EA0DC141AFC2900EB14AF /* Supporting Files */,
 				EC8984C5140999B100CB12E2 /* BDHoverView.h */,
 				EC8984C6140999B100CB12E2 /* BDHoverView.m */,
+				ECA12C5914907C3F00F95161 /* BDLayer.h */,
+				ECA12C5A14907C3F00F95161 /* BDLayer.m */,
 				EC8984C7140999B100CB12E2 /* BDHoverViewController.h */,
 				EC8984C8140999B100CB12E2 /* BDHoverViewController.m */,
 				EC55F54C141D056E00E756C5 /* BDStatusUpdateProtocol.h */,
@@ -199,6 +198,7 @@
 				EC65D931141D9EB500CB16C8 /* BDStatusUpdateProtocol.h in Headers */,
 				EC8EA0E8141AFC9900EB14AF /* BDHoverView.h in Headers */,
 				EC8EA0E9141AFC9B00EB14AF /* BDHoverViewController.h in Headers */,
+				ECA12C5B14907C3F00F95161 /* BDLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +237,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				ECA96F22141DD5890064BB97 /* PBXTargetDependency */,
 			);
 			name = BDHoverViewController;
 			productName = BDHoverViewController;
@@ -350,6 +349,7 @@
 			files = (
 				EC8EA0E7141AFC9200EB14AF /* BDHoverViewController.m in Sources */,
 				EC8EA0E6141AFC8F00EB14AF /* BDHoverView.m in Sources */,
+				ECA12C5C14907C3F00F95161 /* BDLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,11 +360,6 @@
 			isa = PBXTargetDependency;
 			target = EC8EA0D8141AFC2900EB14AF /* BDHoverViewController */;
 			targetProxy = EC8EA0EB141AFCB800EB14AF /* PBXContainerItemProxy */;
-		};
-		ECA96F22141DD5890064BB97 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ECA96F1C141DD2DC0064BB97 /* Documentation */;
-			targetProxy = ECA96F21141DD5890064BB97 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -438,6 +433,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../AppStoreSkeleton\"",
@@ -449,6 +445,7 @@
 				INFOPLIST_FILE = "SampleHoverViewProject/SampleHoverViewProject-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				WRAPPER_EXTENSION = app;
 			};

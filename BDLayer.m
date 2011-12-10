@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 #define kBDBevelRadius 15.0f
-#define kStrokeWidth 2.0f
+#define kStrokeWidth 5.0f
 @interface BDLayer ()
 
 -(void)clipRoundedRect:(CGRect)rect inContext:(CGContextRef)context;

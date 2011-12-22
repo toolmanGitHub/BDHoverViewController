@@ -52,8 +52,8 @@
     
     // Draw and stroke the border
     [self drawRoundedRect:self.bounds inContext:ctx];
-    CGContextSetLineWidth(ctx, kStrokeWidth);
-    CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
+    CGContextSetLineWidth(ctx, 1.0f);
+    CGContextSetStrokeColorWithColor(ctx, [UIColor blackColor].CGColor);
     CGContextSetAlpha(ctx, 1.0f);
     CGContextDrawPath(ctx, kCGPathStroke);
  

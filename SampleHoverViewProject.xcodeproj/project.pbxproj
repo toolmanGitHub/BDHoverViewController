@@ -53,6 +53,13 @@
 			remoteGlobalIDString = EC8EA0D8141AFC2900EB14AF;
 			remoteInfo = BDHoverViewController;
 		};
+		ECE6CBA614B57F4500ABC7BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC89848D140996F100CB12E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECA96F1C141DD2DC0064BB97;
+			remoteInfo = Documentation;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -237,6 +244,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				ECE6CBA714B57F4500ABC7BE /* PBXTargetDependency */,
 			);
 			name = BDHoverViewController;
 			productName = BDHoverViewController;
@@ -361,6 +369,11 @@
 			target = EC8EA0D8141AFC2900EB14AF /* BDHoverViewController */;
 			targetProxy = EC8EA0EB141AFCB800EB14AF /* PBXContainerItemProxy */;
 		};
+		ECE6CBA714B57F4500ABC7BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECA96F1C141DD2DC0064BB97 /* Documentation */;
+			targetProxy = ECE6CBA614B57F4500ABC7BE /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -436,7 +449,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../AppStoreSkeleton\"",
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -458,7 +470,6 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../AppStoreSkeleton\"",
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

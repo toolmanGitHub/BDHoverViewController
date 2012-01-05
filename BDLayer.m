@@ -19,11 +19,15 @@
 
 @end
 @implementation BDLayer
+@synthesize showBevel = showBevel_;
 
 - (id)initWithLayer:(id)layer {
- 	if((self = [super initWithLayer:layer])) {
-		if([layer isKindOfClass:[BDLayer class]]) {
-       }
+    return [self initWithLayer:layer showBevel:YES];
+}
+
+-(id)initWithLayer:(id)layer showBevel:(BOOL)showBevel{
+    if((self = [super initWithLayer:layer])) {
+		showBevel_=showBevel;
 	}
  	return self;
 }
@@ -45,10 +49,13 @@
     
     
     // Draw and fill the bevel    
-    [self drawBevelWithRect:self.bounds inContext:ctx];
-    CGContextSetFillColorWithColor(ctx, [UIColor whiteColor].CGColor);
-    CGContextSetAlpha(ctx, 0.25f);
-    CGContextFillPath(ctx);
+    if (showBevel_) {
+        [self drawBevelWithRect:self.bounds inContext:ctx];
+        CGContextSetFillColorWithColor(ctx, [UIColor whiteColor].CGColor);
+        CGContextSetAlpha(ctx, 0.25f);
+        CGContextFillPath(ctx);
+    }
+    
     
     // Draw and stroke the border
     [self drawRoundedRect:self.bounds inContext:ctx];

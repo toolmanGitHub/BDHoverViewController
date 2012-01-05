@@ -57,6 +57,7 @@ typedef void (^animationBlock)(void);
 @property (nonatomic, strong) NSString *currentStatusString;
 @property (nonatomic) float currentProgress;
 @property (nonatomic) float animationDuration;
+@property (nonatomic) BOOL showBevel;
 
 -(BDHoverView *)hoverViewForStyle:(BDHoverViewStatusStyle)hoverViewStyle;
 -(CGRect)hoverViewFrameForStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle;
@@ -93,21 +94,31 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 @synthesize currentStatusString = currentStatusString_;
 @synthesize currentProgress = currentProgress_;
 @synthesize animationDuration = animationDuration_;
+@synthesize showBevel = showBevel_;
 
 
-- (id)initWithHoverStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle{
+-(id)initWithHoverStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle options:(BDHoverViewControllerOptions)options{
     self = [super init];
     if (self){
         hoverViewStatusStyle_=hoverViewStatusStyle;
         animationDuration_=ANIMATION_DURATION;
+        if (options & BDHoverViewControllerOptionsShowBevel) {
+            showBevel_=YES;
+        }else{
+            showBevel_=NO;
+        }
     }
     return self;
+
+}
+
+
+- (id)initWithHoverStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle{
+    return [self initWithHoverStatusStyle:hoverViewStatusStyle options:BDHoverViewControllerOptionsShowBevel];
 }
 
 - (id)init{
-    self = [self initWithHoverStatusStyle:BDHoverViewStatusNothingStyle];
-    
-    return self;
+    return [self initWithHoverStatusStyle:BDHoverViewStatusNothingStyle];
 }
 
 -(void)updateHoverViewStatus:(NSString *)status progressValue:(float)progress{
@@ -197,7 +208,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     
     CGRect hoverViewFrame=[self hoverViewFrameForStyle:hoverViewStyle];
     
-	BDHoverView *aHoverView=[[BDHoverView alloc] initWithFrame:hoverViewFrame];
+	BDHoverView *aHoverView=[[BDHoverView alloc] initWithFrame:hoverViewFrame showBevel:showBevel_];
     aHoverView.animationDuration=3*ANIMATION_DURATION/4.0;
     
    

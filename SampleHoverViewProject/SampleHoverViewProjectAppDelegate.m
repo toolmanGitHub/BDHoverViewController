@@ -55,7 +55,8 @@
     //    self.uiChangeTimer=[NSTimer scheduledTimerWithTimeInterval:1.75 target:self selector:@selector(timerFiredMethod) userInfo:nil repeats:YES];
 	
     
-    hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle];
+    hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
+                                                                        options:BDHoverViewControllerOptionsNone];
 	self.window.rootViewController=hoverViewController;
 	[self.window makeKeyAndVisible];
     

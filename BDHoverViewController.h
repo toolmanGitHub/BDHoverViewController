@@ -42,6 +42,11 @@
 #import <UIKit/UIKit.h>
 #import "BDStatusUpdateProtocol.h"
 
+enum  {
+    BDHoverViewControllerOptionsNone=0,
+	BDHoverViewControllerOptionsShowBevel=1,
+};
+typedef NSInteger BDHoverViewControllerOptions;
 
 @class BDHoverView;
 /** Controls the style and animations the different styles of the BDHoverView.
@@ -60,12 +65,21 @@
 @property (nonatomic) BOOL animationOngoing;
 
 
-/** Initializes the BDHoverViewController and associated BDHoverView with a specific status.
+/** Initializes the BDHoverViewController and associated BDHoverView with a specific style.
  
  @return An initialized hover view controller object or nil if the object couldn't be created.
  @param hoverViewStatusStyle The style of the BDHoverView.
  @see BDStatusUpdateProtocol
  */
 - (id)initWithHoverStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle;
+
+/** Initializes the BDHoverViewController and associated BDHoverView with a specific style and options.
+ 
+ @return An initialized hover view controller object or nil if the object couldn't be created.
+ @param hoverViewStatusStyle The style of the BDHoverView.
+ @param options An XOR'd list of options of the type BDHoverViewControllerOptions for the BDHoverView object.
+ @see BDStatusUpdateProtocol
+ */
+-(id)initWithHoverStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle options:(BDHoverViewControllerOptions)options;
 
 @end

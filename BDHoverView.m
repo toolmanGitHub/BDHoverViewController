@@ -50,6 +50,11 @@
 @synthesize animationDuration = animationDuration_;
 
 - (id)initWithFrame:(CGRect)frame {
+    return [self initWithFrame:frame showBevel:YES];
+
+}
+
+- (id)initWithFrame:(CGRect)frame showBevel:(BOOL)showBevel{
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code.
@@ -59,65 +64,22 @@
         self.backgroundColor=[UIColor clearColor];
         
         self.exclusiveTouch=YES;
-        
-    
-       
+
         // Layer's Shadow properties
-        self.layer.shadowColor = [UIColor blackColor].CGColor;
-        self.layer.shadowOpacity = 0.5f;
-        self.layer.shadowRadius = 12.5f;
+        BDLayer *theLayer=(BDLayer *)self.layer;
+        theLayer.shadowColor = [UIColor blackColor].CGColor;
+        theLayer.shadowOpacity = 0.5f;
+        theLayer.shadowRadius = 12.5f;
+        theLayer.showBevel=showBevel;
+        
     }
     return self;
+
 }
 
 + (Class)layerClass{
     return [BDLayer class];
 }
-
-//-(void)layoutSublayersOfLayer:(CALayer *)layer{
-//    if (layer==self.layer) {
-//        NSLog(@"layoutSublayersOfLayer");
-//
-//    }
-//}
-
-
-//-(void)setFrame:(CGRect)frame{
-//    NSLog(@"setFrame start");
-////    
-////    // Adapted from Omnigroup's UIView Shadow performance demonstration.  Class can be found here.
-////    // https://github.com/omnigroup/OmniGroup/blob/master/Frameworks/OmniUI/iPad/Examples/DropShadowOptions/Classes/LayerShadowPathDemo.m
-////    
-//    
-//    //  CGRect oldBounds = self.bounds;
-//    
-//    [super setFrame:frame];
-//    [
-////    // Create the new Shadow Path for the animation
-////    CGMutablePathRef newShadowPath = CGPathCreateMutable();
-////    CGPathAddRect(newShadowPath, NULL/*transform*/, self.bounds);
-////    
-////    
-////    CABasicAnimation *shadowAnimation = [CABasicAnimation animationWithKeyPath:@"shadowPath"];
-////    
-////    // Create the shadow path for the old bounds and assign it to the fromValue of the CABasicAnimation object.
-////    CGMutablePathRef oldShadowPath = CGPathCreateMutable();
-////    CGPathAddRect(oldShadowPath, NULL/*transform*/, oldBounds);
-////    
-////    shadowAnimation.fromValue = (__bridge id)oldShadowPath;
-////    CFRelease(oldShadowPath);
-////    
-////    shadowAnimation.toValue = (__bridge id)newShadowPath;
-////    
-////    shadowAnimation.duration = self.animationDuration;
-////    
-////    shadowAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-////    
-////    [self.layer addAnimation:shadowAnimation forKey:@"shadowPath"];
-////    
-////    
-////    CFRelease(newShadowPath);    
-//}
 
 
 - (void)drawRect:(CGRect)rect

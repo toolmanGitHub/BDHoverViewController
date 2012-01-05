@@ -46,7 +46,6 @@
  
  1. Semi-transparent black backgroundColor
  2. Rounded Corners
- 3. Drop shadow that uses animation code adapted from Omnigroup's UIView Shadow performance demonstration.  Class can be found here:  https://github.com/omnigroup/OmniGroup/blob/master/Frameworks/OmniUI/iPad/Examples/DropShadowOptions/Classes/LayerShadowPathDemo.m 
  
 */
 
@@ -61,5 +60,13 @@ Normally this would be a static value, but depending on the animations in BDHove
 
  */
 @property (nonatomic) NSTimeInterval animationDuration;
+
+/** Initializes the BDHoverView with or without a bevel.
+ 
+ @return An initialized BDHoverView object or nil if the object couldn't be created.
+ @param frame The CGRect frame.
+ @param showBevel A Boolean which indicates whether or not a bevel should be drawn.
+*/
+- (id)initWithFrame:(CGRect)frame showBevel:(BOOL)showBevel;
 
 @end

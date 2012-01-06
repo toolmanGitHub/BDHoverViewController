@@ -57,12 +57,12 @@
     
 //     hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
 //                                                                        options:BDHoverViewControllerOptionsNone];
-    hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
-                                                                        options:BDHoverViewControllerOptionsShowBevel];
+//    hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
+//                                                                        options:BDHoverViewControllerOptionsShowBevel];
 //    hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
 //                                                                        options:BDHoverViewControllerOptionsShowBorder];
-//    hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
-//                                                                        options:(BDHoverViewControllerOptionsShowBorder | BDHoverViewControllerOptionsShowBevel)];
+    hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
+                                                                        options:(BDHoverViewControllerOptionsShowBorder | BDHoverViewControllerOptionsShowBevel)];
     
     
     self.window.rootViewController=hoverViewController;

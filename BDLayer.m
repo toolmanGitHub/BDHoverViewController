@@ -17,18 +17,21 @@
 -(void)drawRoundedRect:(CGRect)rect inContext:(CGContextRef)context;
 -(void)drawBevelWithRect:(CGRect)rect inContext:(CGContextRef)context;
 
+-(id)initWithLayer:(id)layer showBevel:(BOOL)showBevel showBorder:(BOOL)showBorder;
+
 @end
 @implementation BDLayer
 @synthesize showBevel = showBevel_;
 @synthesize showBorder = showBorder_;
 
 - (id)initWithLayer:(id)layer {
-    return [self initWithLayer:layer showBevel:YES];
+    return [self initWithLayer:layer showBevel:YES showBorder:NO];
 }
 
--(id)initWithLayer:(id)layer showBevel:(BOOL)showBevel{
+-(id)initWithLayer:(id)layer showBevel:(BOOL)showBevel showBorder:(BOOL)showBorder{
     if((self = [super initWithLayer:layer])) {
 		showBevel_=showBevel;
+        showBorder_=showBorder;
 	}
  	return self;
 }

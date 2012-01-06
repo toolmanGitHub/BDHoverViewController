@@ -66,7 +66,8 @@ Normally this would be a static value, but depending on the animations in BDHove
  @return An initialized BDHoverView object or nil if the object couldn't be created.
  @param frame The CGRect frame.
  @param showBevel A Boolean which indicates whether or not a bevel should be drawn.
+ @param showBorder A Boolean which indicates whether or not a white border is stroked on the hover view.
 */
-- (id)initWithFrame:(CGRect)frame showBevel:(BOOL)showBevel;
+- (id)initWithFrame:(CGRect)frame showBevel:(BOOL)showBevel showBorder:(BOOL)showBorder;
 
 @end

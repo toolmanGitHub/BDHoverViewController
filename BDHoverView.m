@@ -50,11 +50,11 @@
 @synthesize animationDuration = animationDuration_;
 
 - (id)initWithFrame:(CGRect)frame {
-    return [self initWithFrame:frame showBevel:YES];
+    return [self initWithFrame:frame showBevel:YES showBorder:NO];
 
 }
 
-- (id)initWithFrame:(CGRect)frame showBevel:(BOOL)showBevel{
+- (id)initWithFrame:(CGRect)frame showBevel:(BOOL)showBevel showBorder:(BOOL)showBorder{
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code.
@@ -71,6 +71,7 @@
         theLayer.shadowOpacity = 0.5f;
         theLayer.shadowRadius = 12.5f;
         theLayer.showBevel=showBevel;
+        theLayer.showBorder=showBorder;
         
     }
     return self;

@@ -55,9 +55,17 @@
     //    self.uiChangeTimer=[NSTimer scheduledTimerWithTimeInterval:1.75 target:self selector:@selector(timerFiredMethod) userInfo:nil repeats:YES];
 	
     
+//     hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
+//                                                                        options:BDHoverViewControllerOptionsNone];
     hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
-                                                                        options:BDHoverViewControllerOptionsNone];
-	self.window.rootViewController=hoverViewController;
+                                                                        options:BDHoverViewControllerOptionsShowBevel];
+//    hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
+//                                                                        options:BDHoverViewControllerOptionsShowBorder];
+//    hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
+//                                                                        options:(BDHoverViewControllerOptionsShowBorder | BDHoverViewControllerOptionsShowBevel)];
+    
+    
+    self.window.rootViewController=hoverViewController;
 	[self.window makeKeyAndVisible];
     
     NSTimeInterval delay_in_seconds = 3.0;
@@ -69,14 +77,16 @@
             for (iCntr=0; iCntr<1000000000; iCntr++) {
                 if ((iCntr % 1000)==0) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        //[blockSelf.hoverViewController updateHoverViewProgressWithProgressValue:(float)iCntr/1000000000.0 ];
-                        // [blockSelf.hoverViewController updateHoverViewStatus: [NSString stringWithFormat:@"Value:  %f",iCntr/1000000000.0]];
                         [blockSelf.hoverViewController updateHoverViewStatus:[NSString stringWithFormat:@"Value:  %f",iCntr/1000000000.0]
                                                                progressValue:(float)iCntr/1000000000.0];
                     });
                 }
                 
             }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [blockSelf.hoverViewController updateHoverViewStatus:@"Complete!!"
+                                                       progressValue:1.0];
+            });
             
         });
     });

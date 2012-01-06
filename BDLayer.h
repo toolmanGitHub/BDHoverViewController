@@ -62,6 +62,10 @@
  */
 @property (nonatomic) BOOL showBevel;
 
+/** Boolean that determines whether or not the layer will draw the border.
+ */
+@property (nonatomic) BOOL showBorder;
+
 /** Initializes the BDLayer with or without a bevel.
  
  @return An initialized BDLayer object or nil if the object couldn't be created.

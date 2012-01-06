@@ -20,6 +20,7 @@
 @end
 @implementation BDLayer
 @synthesize showBevel = showBevel_;
+@synthesize showBorder = showBorder_;
 
 - (id)initWithLayer:(id)layer {
     return [self initWithLayer:layer showBevel:YES];
@@ -59,8 +60,14 @@
     
     // Draw and stroke the border
     [self drawRoundedRect:self.bounds inContext:ctx];
-    CGContextSetLineWidth(ctx, 1.0f);
-    CGContextSetStrokeColorWithColor(ctx, [UIColor blackColor].CGColor);
+    CGColorRef strokeColor=[UIColor blackColor].CGColor;
+    CGFloat strokeWidth=1.0;
+    if (showBorder_) {
+        strokeColor=[UIColor whiteColor].CGColor;
+        strokeWidth=4.0f;
+    }
+    CGContextSetLineWidth(ctx, strokeWidth);
+    CGContextSetStrokeColorWithColor(ctx, strokeColor);
     CGContextSetAlpha(ctx, 1.0f);
     CGContextDrawPath(ctx, kCGPathStroke);
  

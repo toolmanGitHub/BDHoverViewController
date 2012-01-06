@@ -58,6 +58,7 @@ typedef void (^animationBlock)(void);
 @property (nonatomic) float currentProgress;
 @property (nonatomic) float animationDuration;
 @property (nonatomic) BOOL showBevel;
+@property (nonatomic) BOOL showBorder;
 
 -(BDHoverView *)hoverViewForStyle:(BDHoverViewStatusStyle)hoverViewStyle;
 -(CGRect)hoverViewFrameForStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle;
@@ -95,6 +96,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 @synthesize currentProgress = currentProgress_;
 @synthesize animationDuration = animationDuration_;
 @synthesize showBevel = showBevel_;
+@synthesize showBorder = showBorder_;
 
 
 -(id)initWithHoverStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle options:(BDHoverViewControllerOptions)options{
@@ -106,6 +108,11 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
             showBevel_=YES;
         }else{
             showBevel_=NO;
+        }
+        if (options & BDHoverViewControllerOptionsShowBorder) {
+            showBorder_=YES;
+        }else{
+            showBorder_=NO;
         }
     }
     return self;
@@ -208,7 +215,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     
     CGRect hoverViewFrame=[self hoverViewFrameForStyle:hoverViewStyle];
     
-	BDHoverView *aHoverView=[[BDHoverView alloc] initWithFrame:hoverViewFrame showBevel:showBevel_];
+	BDHoverView *aHoverView=[[BDHoverView alloc] initWithFrame:hoverViewFrame showBevel:showBevel_ showBorder:showBorder_];
     aHoverView.animationDuration=3*ANIMATION_DURATION/4.0;
     
    

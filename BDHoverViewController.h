@@ -45,6 +45,7 @@
 enum  {
     BDHoverViewControllerOptionsNone=0,
 	BDHoverViewControllerOptionsShowBevel=1,
+    BDHoverViewControllerOptionsShowBorder=2,
 };
 typedef NSInteger BDHoverViewControllerOptions;
 

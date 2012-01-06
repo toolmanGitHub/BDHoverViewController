@@ -61,12 +61,12 @@ Normally this would be a static value, but depending on the animations in BDHove
  */
 @property (nonatomic) NSTimeInterval animationDuration;
 
-/** Initializes the BDHoverView with or without a bevel.
+/** Initializes the BDHoverView with or without a bevel or stroked border.  The default is to show a bevel and not show the border.
  
  @return An initialized BDHoverView object or nil if the object couldn't be created.
  @param frame The CGRect frame.
- @param showBevel A Boolean which indicates whether or not a bevel should be drawn.
- @param showBorder A Boolean which indicates whether or not a white border is stroked on the hover view.
+ @param showBevel A Boolean which indicates whether or not a bevel should be drawn.  Default is YES.
+ @param showBorder A Boolean which indicates whether or not a white border is stroked on the hover view.  Default is NO.
 */
 - (id)initWithFrame:(CGRect)frame showBevel:(BOOL)showBevel showBorder:(BOOL)showBorder;
 

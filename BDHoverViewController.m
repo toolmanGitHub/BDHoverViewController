@@ -125,11 +125,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 -(id)initWithAlertImage:(UIImage *)alertImage options:(BDHoverViewControllerOptions)options{
     self = [self initWithHoverStatusStyle:BDHoverViewStatusAlertImageOnlyStyle options:options];
     if (self) {
-//        float maskColors[6]={0.0,254.0,0.0,254.0,0.0,254.0};
-//        CGImageRef maskImage=CGImageCreateWithMaskingColors([alertImage CGImage], maskColors);
-//        alertImage_=[[UIImage alloc] initWithCGImage:maskImage];
-// begin a new image context, to draw our colored image onto
-        UIGraphicsBeginImageContext(alertImage.size);
+       UIGraphicsBeginImageContext(alertImage.size);
         
         // get a reference to that context we created
         CGContextRef context = UIGraphicsGetCurrentContext();
@@ -155,8 +151,6 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         
         alertImage_= UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-        NSLog(@"alertImage:  %@, size:  %@",alertImage_,NSStringFromCGSize(alertImage_.size));
-        
     }
     return self;
 }
@@ -181,6 +175,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     self.progressView.progress=progress;
     self.currentProgress = progress;
 }
+
 -(void)updateHoverViewStatus:(NSString *)status{
     self.statusLabel.text=status;
     self.currentStatusString=status;
@@ -189,7 +184,6 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 #pragma mark -
 #pragma mark HoverView Methods
 -(BDHoverView *)hoverViewForStyle:(BDHoverViewStatusStyle)hoverViewStyle{
-    
     
     CGRect hoverViewFrame=[self hoverViewFrameForStyle:hoverViewStyle];
     
@@ -226,7 +220,6 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
             UIImageView *theImageView=[[UIImageView alloc] initWithImage:alertImage_];
             theImageView.center=CGPointMake(aHoverView.bounds.size.width/2.0f, aHoverView.bounds.size.height/2.0f);
             [aHoverView addSubview:theImageView];
-            NSLog(@"theImageView center:  %@",NSStringFromCGPoint(theImageView.center));
         }
     }
 

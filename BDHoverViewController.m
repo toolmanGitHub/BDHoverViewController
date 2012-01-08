@@ -43,6 +43,7 @@
 
 #define ANIMATION_DURATION 0.5f
 #define DEMO YES
+#define ALERT_IMAGE_PADDING 20.0f
 typedef void (^animationBlock)(void);
 
 @interface BDHoverViewController (){
@@ -85,6 +86,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 @implementation BDHoverViewController
 // Public
 @synthesize animationOngoing =animationOngoing_;
+@synthesize alertImage = alertImage_;
 
 // Private
 @synthesize hoverView = hoverView_;
@@ -98,7 +100,8 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 @synthesize showBevel = showBevel_;
 @synthesize showBorder = showBorder_;
 
-
+#pragma mark -
+#pragma mark Designated Initializers
 -(id)initWithHoverStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle options:(BDHoverViewControllerOptions)options{
     self = [super init];
     if (self){
@@ -119,6 +122,45 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 
 }
 
+-(id)initWithAlertImage:(UIImage *)alertImage options:(BDHoverViewControllerOptions)options{
+    self = [self initWithHoverStatusStyle:BDHoverViewStatusAlertImageOnlyStyle options:options];
+    if (self) {
+//        float maskColors[6]={0.0,254.0,0.0,254.0,0.0,254.0};
+//        CGImageRef maskImage=CGImageCreateWithMaskingColors([alertImage CGImage], maskColors);
+//        alertImage_=[[UIImage alloc] initWithCGImage:maskImage];
+// begin a new image context, to draw our colored image onto
+        UIGraphicsBeginImageContext(alertImage.size);
+        
+        // get a reference to that context we created
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        // set the fill color
+        [[UIColor whiteColor] setFill];
+        
+        // translate/flip the graphics context (for transforming from CG* coords to UI* coords
+        CGContextTranslateCTM(context, 0, alertImage.size.height);
+        CGContextScaleCTM(context, 1.0, -1.0);
+        
+        // set the blend mode to color burn, and the original image
+        CGContextSetBlendMode(context, kCGBlendModeNormal);
+        CGRect rect = CGRectMake(0, 0, alertImage.size.width, alertImage.size.height);
+        CGContextDrawImage(context, rect, alertImage.CGImage);
+        
+        // set a mask that matches the shape of the image, then draw (color burn) a colored rectangle
+        CGContextClipToMask(context, rect, alertImage.CGImage);
+        CGContextAddRect(context, rect);
+        CGContextDrawPath(context,kCGPathFill);
+        
+        // generate a new UIImage from the graphics context we drew onto
+        
+        alertImage_= UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        NSLog(@"alertImage:  %@, size:  %@",alertImage_,NSStringFromCGSize(alertImage_.size));
+        
+    }
+    return self;
+}
+
 
 - (id)initWithHoverStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle{
     return [self initWithHoverStatusStyle:hoverViewStatusStyle options:BDHoverViewControllerOptionsShowBevel];
@@ -128,6 +170,8 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     return [self initWithHoverStatusStyle:BDHoverViewStatusNothingStyle];
 }
 
+#pragma mark -
+#pragma mark Updating the UI elements
 -(void)updateHoverViewStatus:(NSString *)status progressValue:(float)progress{
     [self updateHoverViewStatus:status];
     [self updateHoverViewProgressWithProgressValue:progress];
@@ -142,74 +186,8 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     self.currentStatusString=status;
 }
 
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-   
-    CGRect viewFrame=[UIScreen mainScreen].applicationFrame;
-    UIView *mainView=[[UIView alloc] initWithFrame:viewFrame];
-    mainView.autoresizingMask=(UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin);
-    self.view=mainView;
-    
-    UIView *semiTransparentView=[[UIView alloc] initWithFrame:self.view.bounds];
-    semiTransparentView.autoresizingMask=(UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
-    semiTransparentView.backgroundColor = [UIColor blackColor];
-    semiTransparentView.alpha=0.1;
-    semiTransparentView.opaque=NO;
-    semiTransparentView.exclusiveTouch=YES;
-    [self.view addSubview:semiTransparentView];
-    
-    if (DEMO) {
-        UIButton *aButton=nil;
-        aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-        aButton.frame=CGRectMake(10, 10, 200, 37);
-        [aButton setTitle:@"Exclusive Touch" forState:UIControlStateNormal];
-        [aButton addTarget:self action:@selector(ExclusiveTouch:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:aButton];
-        
-        aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-        aButton.frame=CGRectMake(10, 50, 200, 37);
-        [aButton setTitle:@"Activity Only" forState:UIControlStateNormal];
-        [aButton addTarget:self action:@selector(Only:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:aButton];
-        
-        aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-        aButton.frame=CGRectMake(10, 90, 200, 37);
-         [aButton setTitle:@"Activity/Status" forState:UIControlStateNormal];
-        [aButton addTarget:self action:@selector(Status:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:aButton];
-        
-        aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-        aButton.frame=CGRectMake(10, 130, 200, 37);
-        [aButton setTitle:@"Progress/Status" forState:UIControlStateNormal];
-        [aButton addTarget:self action:@selector(progress:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:aButton];
-        
-        aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-        aButton.frame=CGRectMake(10, 170, 300, 37);
-        aButton.tag=0;
-        [aButton setTitle:@"Toggle to Normal Animation" forState:UIControlStateNormal];
-        [aButton addTarget:self action:@selector(toggleAnimationDuration:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:aButton];
-    
-    }
-    
-    
-    if (self.hoverViewStatusStyle!=BDHoverViewStatusExclusiveTouchStyle) {
-        self.hoverView = [self hoverViewForStyle:self.hoverViewStatusStyle];
-        self.activityIndicator.alpha=1.0f;
-        self.statusLabel.alpha=1.0f;
-        self.progressView.alpha=1.0f;
-        // Add the hoverView to the viewController's view
-        [self.view addSubview:self.hoverView];
-
-    }
-        
-   
-    
-    
-	
-}
-
+#pragma mark -
+#pragma mark HoverView Methods
 -(BDHoverView *)hoverViewForStyle:(BDHoverViewStatusStyle)hoverViewStyle{
     
     
@@ -218,10 +196,11 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 	BDHoverView *aHoverView=[[BDHoverView alloc] initWithFrame:hoverViewFrame showBevel:showBevel_ showBorder:showBorder_];
     aHoverView.animationDuration=3*ANIMATION_DURATION/4.0;
     
-   
-    self.activityIndicator = [self activityIndicatorForStyle: hoverViewStyle];
-    [aHoverView addSubview:self.activityIndicator];
-    
+    if (hoverViewStyle!=BDHoverViewStatusAlertImageOnlyStyle) {
+        self.activityIndicator = [self activityIndicatorForStyle: hoverViewStyle];
+        [aHoverView addSubview:self.activityIndicator];
+    }
+        
     switch (hoverViewStyle) {
         case BDHoverViewStatusActivityAndStatusStyle:
         {
@@ -241,6 +220,13 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
             self.progressView=[self progressViewForStyle: hoverViewStyle];
             [aHoverView addSubview:self.progressView];
             break;
+        }
+        case BDHoverViewStatusAlertImageOnlyStyle:
+        {
+            UIImageView *theImageView=[[UIImageView alloc] initWithImage:alertImage_];
+            theImageView.center=CGPointMake(aHoverView.bounds.size.width/2.0f, aHoverView.bounds.size.height/2.0f);
+            [aHoverView addSubview:theImageView];
+            NSLog(@"theImageView center:  %@",NSStringFromCGPoint(theImageView.center));
         }
     }
 
@@ -287,6 +273,15 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
             hoverViewHeight = 180.0f;
             break;
         }   
+        case BDHoverViewStatusAlertImageOnlyStyle:{
+            if (!alertImage_) {
+                hoverViewHeight=hoverViewWidth;
+            }else{
+                CGSize alertImageSize=alertImage_.size;
+                hoverViewWidth=alertImageSize.width+2*ALERT_IMAGE_PADDING;
+                hoverViewHeight=alertImageSize.height+2*ALERT_IMAGE_PADDING;
+            }
+        }
     }
     
     hoverViewX=round(self.view.bounds.size.width/2-hoverViewWidth/2);
@@ -480,6 +475,14 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     
 }
 
+- (IBAction)alertImage:(id)sender {
+    //  if (!self.animationOngoing) {
+    [self animateToHoverViewStatusStyle:BDHoverViewStatusAlertImageOnlyStyle completion:nil];
+    // }
+    
+    
+}
+
 -(IBAction)toggleAnimationDuration:(UIButton *)sender{
     
     if (sender.tag==0) {
@@ -603,6 +606,17 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     if (self.animationOngoing || hoverViewStatusStyle==self.hoverViewStatusStyle) {
         return;
     }
+    
+    // We using the BDHoverViewStatusAlertImageOnly style, we can only toggle between it and the 
+    // BDHoverViewStatusExclusiveTouchStyle
+    
+    if (self.hoverViewStatusStyle!=BDHoverViewStatusExclusiveTouchStyle && hoverViewStatusStyle==BDHoverViewStatusAlertImageOnlyStyle) {
+        return;
+    }
+    
+    if (self.hoverViewStatusStyle==BDHoverViewStatusAlertImageOnlyStyle && hoverViewStatusStyle!=BDHoverViewStatusExclusiveTouchStyle) {
+        return;
+    }
      
     self.animationOngoing=YES;
     self.hoverView.animationDuration=3*self.animationDuration/4.0f;
@@ -623,8 +637,8 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         // If the hoverView is not already present (i.e. the Exclusive Touch Style, prepare it
         // for viewing.
                
-        // First we get the hoverView.  Calling this method returns a hoverView with all the right UI Elements per the requested
-        // style.
+        // First we get the hoverView.  Calling this method returns a hoverView with all the right 
+        // UI Elements per the requested style.
         
         self.hoverView = [self hoverViewForStyle:hoverViewStatusStyle];
         self.hoverView.transform=CGAffineTransformMakeScale(0.01f,0.01f);
@@ -732,6 +746,81 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 
 #pragma mark -
 #pragma View Life Cycle
+
+// Implement loadView to create a view hierarchy programmatically, without using a nib.
+- (void)loadView {
+    
+    CGRect viewFrame=[UIScreen mainScreen].applicationFrame;
+    UIView *mainView=[[UIView alloc] initWithFrame:viewFrame];
+    mainView.autoresizingMask=(UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin);
+    self.view=mainView;
+    
+    UIView *semiTransparentView=[[UIView alloc] initWithFrame:self.view.bounds];
+    semiTransparentView.autoresizingMask=(UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
+    semiTransparentView.backgroundColor = [UIColor blackColor];
+    semiTransparentView.alpha=0.1;
+    semiTransparentView.opaque=NO;
+    semiTransparentView.exclusiveTouch=YES;
+    [self.view addSubview:semiTransparentView];
+    
+    if (DEMO) {
+        UIButton *aButton=nil;
+        aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+        aButton.frame=CGRectMake(10, 10, 200, 37);
+        [aButton setTitle:@"Exclusive Touch" forState:UIControlStateNormal];
+        [aButton addTarget:self action:@selector(ExclusiveTouch:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:aButton];
+        
+        aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+        aButton.frame=CGRectMake(10, 50, 200, 37);
+        [aButton setTitle:@"Activity Only" forState:UIControlStateNormal];
+        [aButton addTarget:self action:@selector(Only:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:aButton];
+        
+        aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+        aButton.frame=CGRectMake(10, 90, 200, 37);
+        [aButton setTitle:@"Activity/Status" forState:UIControlStateNormal];
+        [aButton addTarget:self action:@selector(Status:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:aButton];
+        
+        aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+        aButton.frame=CGRectMake(10, 130, 200, 37);
+        [aButton setTitle:@"Progress/Status" forState:UIControlStateNormal];
+        [aButton addTarget:self action:@selector(progress:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:aButton];
+        
+        aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+        aButton.frame=CGRectMake(10, 170, 200, 37);
+        [aButton setTitle:@"AlertImage" forState:UIControlStateNormal];
+        [aButton addTarget:self action:@selector(alertImage:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:aButton];
+        
+        aButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+        aButton.frame=CGRectMake(10, 210, 300, 37);
+        aButton.tag=0;
+        [aButton setTitle:@"Toggle to Normal Animation" forState:UIControlStateNormal];
+        [aButton addTarget:self action:@selector(toggleAnimationDuration:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:aButton];
+        
+    }
+    
+    
+    if (self.hoverViewStatusStyle!=BDHoverViewStatusExclusiveTouchStyle) {
+        self.hoverView = [self hoverViewForStyle:self.hoverViewStatusStyle];
+        self.activityIndicator.alpha=1.0f;
+        self.statusLabel.alpha=1.0f;
+        self.progressView.alpha=1.0f;
+        // Add the hoverView to the viewController's view
+        [self.view addSubview:self.hoverView];
+        
+    }
+    
+    
+    
+    
+	
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	[super viewDidLoad];

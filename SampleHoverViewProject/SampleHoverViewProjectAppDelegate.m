@@ -61,8 +61,10 @@
 //                                                                        options:BDHoverViewControllerOptionsShowBevel];
 //    hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
 //                                                                        options:BDHoverViewControllerOptionsShowBorder];
-    hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
-                                                                        options:(BDHoverViewControllerOptionsShowBorder | BDHoverViewControllerOptionsShowBevel)];
+//    hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
+//                                                                        options:(BDHoverViewControllerOptionsShowBorder | BDHoverViewControllerOptionsShowBevel)];
+    
+    hoverViewController=[[BDHoverViewController alloc] initWithAlertImage:[UIImage imageNamed:@"sampleAlertImage.png"] options:BDHoverViewControllerOptionsNone];
     
     
     self.window.rootViewController=hoverViewController;

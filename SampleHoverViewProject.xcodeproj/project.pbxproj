@@ -40,6 +40,7 @@
 		EC8EA0EF141AFCD500EB14AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849A140996F100CB12E2 /* UIKit.framework */; };
 		ECA12C5B14907C3F00F95161 /* BDLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA12C5914907C3F00F95161 /* BDLayer.h */; };
 		ECA12C5C14907C3F00F95161 /* BDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA12C5A14907C3F00F95161 /* BDLayer.m */; };
+		ECEBE29014B91776006A1ACE /* sampleAlertImage.png in Resources */ = {isa = PBXBuildFile; fileRef = ECEBE28F14B91776006A1ACE /* sampleAlertImage.png */; };
 		ECF0E9811409A0FB00CDB86F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC89849E140996F100CB12E2 /* CoreGraphics.framework */; };
 		ECF0E9831409A26300CDB86F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF0E9821409A26200CDB86F /* QuartzCore.framework */; };
 		ECF41B371448A3220067EC0A /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = ECF41B361448A3220067EC0A /* README.mdown */; };
@@ -53,7 +54,7 @@
 			remoteGlobalIDString = EC8EA0D8141AFC2900EB14AF;
 			remoteInfo = BDHoverViewController;
 		};
-		ECE6CBA614B57F4500ABC7BE /* PBXContainerItemProxy */ = {
+		ECEBE29514B970F9006A1ACE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC89848D140996F100CB12E2 /* Project object */;
 			proxyType = 1;
@@ -85,6 +86,7 @@
 		EC8EA0E1141AFC2900EB14AF /* BDHoverViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BDHoverViewController-Prefix.pch"; sourceTree = "<group>"; };
 		ECA12C5914907C3F00F95161 /* BDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDLayer.h; sourceTree = "<group>"; };
 		ECA12C5A14907C3F00F95161 /* BDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDLayer.m; sourceTree = "<group>"; };
+		ECEBE28F14B91776006A1ACE /* sampleAlertImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sampleAlertImage.png; sourceTree = "<group>"; };
 		ECF0E9821409A26200CDB86F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ECF41B361448A3220067EC0A /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +152,7 @@
 		EC8984A0140996F100CB12E2 /* SampleHoverViewProject */ = {
 			isa = PBXGroup;
 			children = (
+				ECEBE28F14B91776006A1ACE /* sampleAlertImage.png */,
 				EC8984C21409995B00CB12E2 /* MainWindow.xib */,
 				EC8984A9140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.h */,
 				EC8984AA140996F100CB12E2 /* SampleHoverViewProjectAppDelegate.m */,
@@ -244,7 +247,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				ECE6CBA714B57F4500ABC7BE /* PBXTargetDependency */,
+				ECEBE29614B970F9006A1ACE /* PBXTargetDependency */,
 			);
 			name = BDHoverViewController;
 			productName = BDHoverViewController;
@@ -286,6 +289,7 @@
 				EC8984A5140996F100CB12E2 /* InfoPlist.strings in Resources */,
 				EC8984C31409995B00CB12E2 /* MainWindow.xib in Resources */,
 				ECF41B371448A3220067EC0A /* README.mdown in Resources */,
+				ECEBE29014B91776006A1ACE /* sampleAlertImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,10 +373,10 @@
 			target = EC8EA0D8141AFC2900EB14AF /* BDHoverViewController */;
 			targetProxy = EC8EA0EB141AFCB800EB14AF /* PBXContainerItemProxy */;
 		};
-		ECE6CBA714B57F4500ABC7BE /* PBXTargetDependency */ = {
+		ECEBE29614B970F9006A1ACE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = ECA96F1C141DD2DC0064BB97 /* Documentation */;
-			targetProxy = ECE6CBA614B57F4500ABC7BE /* PBXContainerItemProxy */;
+			targetProxy = ECEBE29514B970F9006A1ACE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

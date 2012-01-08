@@ -51,6 +51,9 @@ The Activity with Status Label style looks like this:
 The Activity, Status, and Progress style looks like this:
 ![progressScreenShot](https://github.com/toolmanGitHub/BDHoverViewController/raw/master/progressScreenShot.png)
 
+The Alert Image Style looks like this:
+![alertImageScreenShot](https://github.com/toolmanGitHub/BDHoverViewController/raw/master/alertImageScreenShot.png)
+
 License
 
 The below license is the new BSD license with the OSI recommended personalizations.

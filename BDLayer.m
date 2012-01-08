@@ -48,7 +48,7 @@
     //  draw and fill the background and set the alpha
     [self drawRoundedRect:self.bounds inContext:ctx];
     CGContextSetFillColorWithColor(ctx, [UIColor blackColor].CGColor);
-    CGContextSetAlpha(ctx, 0.85f);
+    CGContextSetAlpha(ctx, 0.75f);
     CGContextFillPath(ctx);
     
     

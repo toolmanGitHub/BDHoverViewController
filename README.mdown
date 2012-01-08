@@ -4,6 +4,7 @@ This sample demonstrates the use of the BDHoverViewController.  BDHoverViewContr
 2.  An exclusive touch UIView with a UIActivityIndicator
 3.  An exclusive tough UIView with a UIActivityIndicator and UILabel for status.
 4.  An exclusive touch UIView with a UIActivityIndicator, UILabel for status, and a UIProgressView
+5.  An exclusive touch UIView that displays a UIImage that you supply.
 
 BDHoverViewController makes extensive use of blocks in order to build the animations for transitions from one hoverView style to the other.  The use of NSMutableArray and blocks allow the building of the animations on the fly.
 
@@ -19,6 +20,8 @@ Adding the hoverview at runtime is easy.
     self.window.rootViewController.modalPresentationStyle=UIModalPresentationCurrentContext;
     [self.window.rootViewController presentModalViewController:hoverViewController_ animated:YES]; 
 </code></pre>
+
+The initializers make use of the BDHoverViewControllerOptions type that set specific options such as whether or not a bevel (BDHoverViewControllerOptionsShowBevel)is show or a border (BDHoverViewControllerOptionsShowBorder) is drawn around the BDHoverView.
 
 The BDHoverViewController adheres to the BDStatusUpdateProtocol.  Therefore it will respond to the following update methods:
 To update just the UIProgressView use: -(void)updateHoverViewProgressWithProgressValue:(float)progress.  Even if the BDHoverViewStatusActivityProgressStyle style is not being shown, the progressValue will be saved.  This allows the progressView to be animated correctly, if and when you do choose to animate to the BDHoverViewStatusActivityProgressStyle.  The usage is as follows.

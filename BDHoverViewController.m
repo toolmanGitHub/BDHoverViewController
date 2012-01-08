@@ -188,6 +188,8 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     CGRect hoverViewFrame=[self hoverViewFrameForStyle:hoverViewStyle];
     
 	BDHoverView *aHoverView=[[BDHoverView alloc] initWithFrame:hoverViewFrame showBevel:showBevel_ showBorder:showBorder_];
+    CGPoint hoverViewCenter=aHoverView.center;
+    aHoverView.center=CGPointMake(floorf(hoverViewCenter.x), floorf(hoverViewCenter.y));
     aHoverView.animationDuration=3*ANIMATION_DURATION/4.0;
     
     if (hoverViewStyle!=BDHoverViewStatusAlertImageOnlyStyle) {
@@ -218,7 +220,7 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         case BDHoverViewStatusAlertImageOnlyStyle:
         {
             UIImageView *theImageView=[[UIImageView alloc] initWithImage:alertImage_];
-            theImageView.center=CGPointMake(aHoverView.bounds.size.width/2.0f, aHoverView.bounds.size.height/2.0f);
+            theImageView.center=CGPointMake(floorf(aHoverView.bounds.size.width/2.0f), floorf(aHoverView.bounds.size.height/2.0f));
             [aHoverView addSubview:theImageView];
         }
     }
@@ -347,7 +349,9 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
 -(UILabel *)statusLabelForStyle:(BDHoverViewStatusStyle)hoverViewStyle{
     
     UILabel *aStatusLabel=[[UILabel alloc] initWithFrame:CGRectMake(21.0f, 70.0f, 248.0f, 21.0f)];
-    
+    CGPoint aStatusLabelCenter=aStatusLabel.center;
+    aStatusLabel.center=CGPointMake(floorf(aStatusLabelCenter.x), floorf(aStatusLabelCenter.y));
+
     aStatusLabel.frame = [self statusLabelFrameForStyle: hoverViewStyle];
     
     aStatusLabel.backgroundColor=[UIColor clearColor];
@@ -371,17 +375,17 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     switch (hoverViewStyle) {
         case BDHoverViewStatusActivityOnlyStyle:
         {
-            statusLabelFrame=CGRectMake(10.0f, 60.0f, 0.0f, 21.0f);
+            statusLabelFrame=CGRectMake(10.0f, 60.0f, 0.0f, 22.0f);
             break;
         }
         case BDHoverViewStatusActivityAndStatusStyle:
         {
-           statusLabelFrame=CGRectMake(21.0f, 60.0f, 248.0f, 21.0f);
+           statusLabelFrame=CGRectMake(21.0f, 60.0f, 248.0f, 22.0f);
             break;
         }
         case BDHoverViewStatusActivityProgressStyle:
         {
-            statusLabelFrame=CGRectMake(21.0f, 111.0f, 248.0f, 21.0f);
+            statusLabelFrame=CGRectMake(21.0f, 111.0f, 248.0f, 22.0f);
             break;
         }
             
@@ -414,19 +418,19 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     switch (hoverViewStatusStyle) {
         case BDHoverViewStatusActivityOnlyStyle:
         {
-            progressViewFrame=CGRectMake(0.0f,60.0f,5.0f,9.0f);
+            progressViewFrame=CGRectMake(0.0f,60.0f,5.0f,10.0f);
             break;
             
         }
         case BDHoverViewStatusActivityAndStatusStyle:
         {
-            progressViewFrame=CGRectMake(22.0f,50.0f,248.0f,9.0f);
+            progressViewFrame=CGRectMake(22.0f,50.0f,248.0f,10.0f);
             break;
             
         }
         case BDHoverViewStatusActivityProgressStyle:
         {
-            progressViewFrame=CGRectMake(22.0f, 94.0f, 248.0f, 9.0f);
+            progressViewFrame=CGRectMake(22.0f, 94.0f, 248.0f, 10.0f);
             break;
         }
     }
@@ -531,12 +535,15 @@ void StatusLabelAnimationBlocksForStyle(BDHoverViewController *self, BDHoverView
             //        NSLog(@"        Second Block:  Status Label Alpha and Frame");
             blockSelf.statusLabel.alpha=1.0f;
             blockSelf.statusLabel.frame=[self statusLabelFrameForStyle:hoverViewStatusStyle];
-        } copy];
+            CGPoint statusLabelCenter=blockSelf.statusLabel.center;
+            blockSelf.statusLabel.center=CGPointMake(floorf(statusLabelCenter.x), floorf(statusLabelCenter.y));
+          } copy];
         [*secondBlocks addObject: secondBlock];
         
         completionBlock=[^{
             //           NSLog(@"            Completion Block:  Status Label Reapply Alpha");
             blockSelf.statusLabel.alpha=1.0f;
+            
         } copy];
         [*completionBlocks addObject: completionBlock];
         
@@ -701,6 +708,8 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
     }
     
     [UIView animateWithDuration:self.animationDuration/4.0f
+                          delay:0.0
+                        options:UIViewAnimationOptionAllowAnimatedContent|UIViewAnimationOptionLayoutSubviews
                      animations:^{
                          [firstStageAnimationBlocks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                              animationBlock firstBlock=obj;
@@ -709,6 +718,8 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
                      } //animations:^{
                      completion:^(BOOL finished) {
                          [UIView animateWithDuration:3.0*self.animationDuration/4.0f
+                                               delay:0.0
+                                             options:UIViewAnimationOptionAllowAnimatedContent|UIViewAnimationOptionLayoutSubviews
                                           animations:^{
                                               [secondStageAnimationBlocks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                                                   animationBlock secondBlock=obj;

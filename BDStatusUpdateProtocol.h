@@ -16,7 +16,7 @@ typedef NSInteger BDHoverViewStatusStyle;
     BDHoverViewStatusActivityOnlyStyle,       Hover view with rounded corners that shows only a UIActivityIndicator
     BDHoverViewStatusActivityAndStatusStyle,  Hover view with rounded corners a UIActivityIndicator and a status UILabel
     BDHoverViewStatusActivityProgressStyle,   Hover view with rounded corners, UIActivityIndicator, status UILabel, and UIProgressView
-    BDHoverViewStatusAlertImageOnlyStyle,     Hover view with rounded corners and a supplied UIImage. Note that when the current style is BDHoverViewStatusAlertImageOnlyStyle, the hover view can only be animated to the BDHoverViewStatusExclusiveTouchStyle. Similarly, the BDHoverViewStatusImageOnlyStyle can be animated from the BDHoverViewStatusExclusiveTouchStyle.
+    BDHoverViewStatusAlertImageOnlyStyle,     Hover view with rounded corners and a supplied UIImage. Note that when the current style is BDHoverViewStatusAlertImageOnlyStyle, the hover view can ONLY be animated to the BDHoverViewStatusExclusiveTouchStyle. Similarly, the BDHoverViewStatusImageOnlyStyle can ONLY be animated from the BDHoverViewStatusExclusiveTouchStyle.
     };
     typedef NSInteger BDHoverViewStatusStyle;`
  

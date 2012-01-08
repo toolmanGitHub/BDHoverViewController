@@ -54,6 +54,8 @@ typedef NSInteger BDHoverViewControllerOptions;
  
  The animations from one style to another are accomplished by cascading two UIView's animateWithDuration:animations:completion calls.  The animation blocks are created dynamically based upon what UI elements are required (either removed or added) and the size of the BDHoverView.  
  
+ Note that when the current style is BDHoverViewStatusAlertImageOnlyStyle, the hover view can only be animated to the BDHoverViewStatusExclusiveTouchStyle.  Similarly, the BDHoverViewStatusImageOnlyStyle can ONLY be animated from the BDHoverViewStatusExclusiveTouchStyle.
+ 
 */
 
 @interface BDHoverViewController : UIViewController <BDStatusUpdateProtocol>{
@@ -80,7 +82,7 @@ typedef NSInteger BDHoverViewControllerOptions;
 
 /** Initializes the BDHoverViewController and associated BDHoverView with a specific style and options.
  
- Note that when the current style is BDHoverViewStatusAlertImageOnlyStyle, the hover view can only be animated to the BDHoverViewStatusExclusiveTouchStyle. Similarly, the BDHoverViewStatusImageOnlyStyle can be animated from the BDHoverViewStatusExclusiveTouchStyle.
+ Note that when the current style is BDHoverViewStatusAlertImageOnlyStyle, the hover view can only be animated to the BDHoverViewStatusExclusiveTouchStyle. Similarly, the BDHoverViewStatusImageOnlyStyle can ONLY be animated from the BDHoverViewStatusExclusiveTouchStyle.
  
  @return An initialized hover view controller object or nil if the object couldn't be created.
  @param hoverViewStatusStyle The style of the BDHoverView.
@@ -89,9 +91,9 @@ typedef NSInteger BDHoverViewControllerOptions;
  */
 -(id)initWithHoverStatusStyle:(BDHoverViewStatusStyle)hoverViewStatusStyle options:(BDHoverViewControllerOptions)options;
 
-/** Initializes the BDHoverViewController and associated BDHoverView with a specific style and options.
+/** Initializes the BDHoverViewController and associated BDHoverView with the BDHoverViewStatusAlertImageOnlyStyle and specified options.
  
- Note that when the current style is BDHoverViewStatusAlertImageOnlyStyle, the hover view can only be animated to the BDHoverViewStatusExclusiveTouchStyle.  Similarly, the BDHoverViewStatusImageOnlyStyle can be animated from the BDHoverViewStatusExclusiveTouchStyle.
+ All color in the supplied UIImage will be masked and blended to be white.Note that when the current style is BDHoverViewStatusAlertImageOnlyStyle, the hover view can only be animated to the BDHoverViewStatusExclusiveTouchStyle.  Similarly, the BDHoverViewStatusImageOnlyStyle can ONLY be animated from the BDHoverViewStatusExclusiveTouchStyle.
  
  @return An initialized hover view controller with the BDHoverViewStatusAlertImageOnlyStyle.
  @param alertImage The UIImage to be placed horizontally and vertically centered within the hoverView.

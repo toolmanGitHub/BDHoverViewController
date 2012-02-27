@@ -670,7 +670,11 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
         
         
     }else{
+        
+        // Check to see if the requested style is Exclusive Touch
         if (hoverViewStatusStyle==BDHoverViewStatusExclusiveTouchStyle) {
+            // Create a block that begins shrinking the hoverview and setting
+            // it's opacity to 0.0.
             firstBlock=[^{
                 blockSelf.hoverView.transform=CGAffineTransformMakeScale(0.95f, 0.95f);
                 blockSelf.hoverView.alpha=0.0f;
@@ -680,6 +684,8 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
             
            
             //  self.hoverView.layer.opacity=0.0;
+            
+            // For the completion block, clearn up the views.
            
             completionBlock=[^{
                 [blockSelf.hoverView removeFromSuperview];
@@ -692,13 +698,19 @@ void ProgressViewAnimationBlocksForStyle(BDHoverViewController *self, BDHoverVie
             [completionBlocks addObject:completionBlock];
                
         }else{
+            // We need to animate to something other than the exclusive touch.
             
+            // Get the size of the frame that we need to animate to.
             CGRect newHoverViewFrame=[self hoverViewFrameForStyle:hoverViewStatusStyle];
-           secondBlock=[^{
+            
+            // Set the animation block so that the view animates to the right frame size.
+            secondBlock=[^{
                blockSelf.hoverView.bounds=CGRectMake(0, 0, newHoverViewFrame.size.width, newHoverViewFrame.size.height);
                blockSelf.activityIndicator.frame=[self activityIndicatorFrameForStyle:hoverViewStatusStyle];
             } copy];
             [secondStageAnimationBlocks addObject: secondBlock];
+            
+            // Add animations to the first and second stage animation blocks for the status label and progress views.
             StatusLabelAnimationBlocksForStyle(self, hoverViewStatusStyle, &firstStageAnimationBlocks, &secondStageAnimationBlocks,&completionBlocks);
             ProgressViewAnimationBlocksForStyle(self, hoverViewStatusStyle, &firstStageAnimationBlocks, &secondStageAnimationBlocks, &completionBlocks);
                         

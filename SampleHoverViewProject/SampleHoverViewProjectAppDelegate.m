@@ -61,10 +61,12 @@
 //                                                                        options:BDHoverViewControllerOptionsShowBevel];
 //    hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
 //                                                                        options:BDHoverViewControllerOptionsShowBorder];
-    hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
-                                                                        options:(BDHoverViewControllerOptionsShowBorder | BDHoverViewControllerOptionsShowBevel)];
+//    hoverViewController=[[BDHoverViewController alloc] initWithHoverStatusStyle:BDHoverViewStatusActivityProgressStyle
+//                                                                        options:(BDHoverViewControllerOptionsShowBorder | BDHoverViewControllerOptionsShowBevel)];
     
-    //   hoverViewController=[[BDHoverViewController alloc] initWithAlertImage:[UIImage imageNamed:@"sampleAlertImage.png"] options:BDHoverViewControllerOptionsNone];
+    // !!Note you can only toggle between the BDHoverViewStatusExclusiveTouchStyle and the BDHoverViewStatusAlertImageOnlyStyle style.
+    
+    hoverViewController=[[BDHoverViewController alloc] initWithAlertImage:[UIImage imageNamed:@"sampleAlertImage.png"] options:(BDHoverViewControllerOptionsShowBorder | BDHoverViewControllerOptionsShowBevel)];
     
     
     self.window.rootViewController=hoverViewController;

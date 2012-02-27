@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		EC713AF414FB7A3500716D06 /* Aggregate */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = EC713AF714FB7A3600716D06 /* Build configuration list for PBXAggregateTarget "Aggregate" */;
+			buildPhases = (
+			);
+			dependencies = (
+				EC713AFA14FB7A4200716D06 /* PBXTargetDependency */,
+				EC713AFC14FB7A4400716D06 /* PBXTargetDependency */,
+			);
+			name = Aggregate;
+			productName = Aggregate;
+		};
 		ECA96F1C141DD2DC0064BB97 /* Documentation */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = ECA96F1D141DD2DC0064BB97 /* Build configuration list for PBXAggregateTarget "Documentation" */;
@@ -47,19 +59,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		EC8EA0EB141AFCB800EB14AF /* PBXContainerItemProxy */ = {
+		EC713AF914FB7A4200716D06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC89848D140996F100CB12E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECA96F1C141DD2DC0064BB97;
+			remoteInfo = Documentation;
+		};
+		EC713AFB14FB7A4400716D06 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC89848D140996F100CB12E2 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EC8EA0D8141AFC2900EB14AF;
 			remoteInfo = BDHoverViewController;
 		};
-		ECEBE29514B970F9006A1ACE /* PBXContainerItemProxy */ = {
+		EC8EA0EB141AFCB800EB14AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC89848D140996F100CB12E2 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ECA96F1C141DD2DC0064BB97;
-			remoteInfo = Documentation;
+			remoteGlobalIDString = EC8EA0D8141AFC2900EB14AF;
+			remoteInfo = BDHoverViewController;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -247,7 +266,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				ECEBE29614B970F9006A1ACE /* PBXTargetDependency */,
 			);
 			name = BDHoverViewController;
 			productName = BDHoverViewController;
@@ -277,6 +295,7 @@
 				EC898495140996F100CB12E2 /* SampleHoverViewProject */,
 				EC8EA0D8141AFC2900EB14AF /* BDHoverViewController */,
 				ECA96F1C141DD2DC0064BB97 /* Documentation */,
+				EC713AF414FB7A3500716D06 /* Aggregate */,
 			);
 		};
 /* End PBXProject section */
@@ -368,15 +387,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EC713AFA14FB7A4200716D06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECA96F1C141DD2DC0064BB97 /* Documentation */;
+			targetProxy = EC713AF914FB7A4200716D06 /* PBXContainerItemProxy */;
+		};
+		EC713AFC14FB7A4400716D06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC8EA0D8141AFC2900EB14AF /* BDHoverViewController */;
+			targetProxy = EC713AFB14FB7A4400716D06 /* PBXContainerItemProxy */;
+		};
 		EC8EA0EC141AFCB800EB14AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EC8EA0D8141AFC2900EB14AF /* BDHoverViewController */;
 			targetProxy = EC8EA0EB141AFCB800EB14AF /* PBXContainerItemProxy */;
-		};
-		ECEBE29614B970F9006A1ACE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ECA96F1C141DD2DC0064BB97 /* Documentation */;
-			targetProxy = ECEBE29514B970F9006A1ACE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -400,6 +424,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EC713AF514FB7A3600716D06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC713AF614FB7A3600716D06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		EC8984BA140996F200CB12E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -545,6 +583,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EC713AF714FB7A3600716D06 /* Build configuration list for PBXAggregateTarget "Aggregate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC713AF514FB7A3600716D06 /* Debug */,
+				EC713AF614FB7A3600716D06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		EC898490140996F100CB12E2 /* Build configuration list for PBXProject "SampleHoverViewProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
